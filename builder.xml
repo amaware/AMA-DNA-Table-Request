@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="AMA-DNA-Table-Request.makejar" default="makejar" basedir=".">
+  <target name="makejar" description="Make JAR for AMA-DNA-Table-Request">
+    <jar jarfile="..\..\jar\maindnatablerequest.jar" includes="net\amaware\apps\dnatablerequest\*.class" basedir="bin" />
+  </target>
+</project>

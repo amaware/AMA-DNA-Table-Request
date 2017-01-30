@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/AMA-DNA"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/AUtil"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/amawarebase.jar"/>
+	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/poi.jar"/>
+	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/jdom.jar"/>
+	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/mysql-connector-java.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
