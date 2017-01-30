@@ -1,0 +1,259 @@
+=>net.amaware.autil.ACommDb=>LOGFILE |Dir=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS |Name=c0addan.log.txt
+=>net.amaware.autil.ACommDb=>Start @2014-10-08 10:15:49.489 |LogFileName=c0addan.log.txt
+    |userName=c0addan |userHome=C:\Users\c0addan
+    |userDirectoryName=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS |environment=Windows 7
+_______________Input Args_________________
+Arg#0=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls
+!!!MainApp!!! delim{,}
+!!!MainApp!!! sourceFileProc delim{,}
+_______________Input Args_________________
+Arg#0=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls
+argSqlFileDir=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3
+argSqlFileFullName=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls
+argSqlFileExt=XLS
+argSqlFileNameSansExt=PRODUCT_BUNDLE_VALUES.exp
+------------------------------
+------------------------------
+isFromfile=true
+------------------------------
+_____________________end___________________
+__________PROCESSING DATA FILE________________
+____________________Report______________________
+ |reportDirName= |reportDirNameFull= |propName=MainSqlReportDir |propVal=
+=>net.amaware.serv.SourceProperty=>PropName{dbUserPassword}...value{password being HIDDEN}
+=>net.amaware.serv.SourceProperty=>PropName{sourceHeadRowStart}...value{1}...valget{1}
+=>net.amaware.serv.SourceProperty=>PropName{sourceName}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDir}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{sourceHeadRowEnd}...value{0}...valget{0}
+=>net.amaware.serv.SourceProperty=>PropName{[ACOM-DB]}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{[ACOM-USER-FILES]}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{propBasePropFile}...value{db2-dev-eastAQS3.properties}...valget{db2-dev-eastAQS3.properties}
+=>net.amaware.serv.SourceProperty=>PropName{dbDriverClass}...value{com.ibm.db2.jcc.DB2Driver}...valget{com.ibm.db2.jcc.DB2Driver}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataHeadRowStart}...value{2}...valget{2}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataRowStart}...value{3}...valget{3}
+=>net.amaware.serv.SourceProperty=>PropName{propBasePropDir}...value{C:/Users/c0addan/amawareJavaDev/properties}...valget{C:/Users/c0addan/amawareJavaDev/properties}
+=>net.amaware.serv.SourceProperty=>PropName{dbURL}...value{jdbc:db2://DDFDAT1.ODC.VZWCORP.COM:446/NYOBDAT1:currentSchema=AQS3;}...valget{jdbc:db2://DDFDAT1.ODC.VZWCORP.COM:446/NYOBDAT1:currentSchema=AQS3;}
+=>net.amaware.serv.SourceProperty=>PropName{reportFontSize}...value{1em}...valget{1em}
+=>net.amaware.serv.SourceProperty=>PropName{reportAsTextFile}...value{y}...valget{y}
+=>net.amaware.serv.SourceProperty=>PropName{sourceNameFull}...value{C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls}...valget{C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataHeadRowEnd}...value{2}...valget{2}
+=>net.amaware.serv.SourceProperty=>PropName{dbUserID}...value{c0addan}...valget{c0addan}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataRowEnd}...value{999999999}...valget{999999999}
+=>net.amaware.serv.SourceProperty=>PropName{dbMaxRowsReturn}...value{999}...valget{999}
+=>net.amaware.serv.SourceProperty=>PropName{[ACOM-BASE-PROPERTIES]}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{propBaseAuthPropFile}...value{vzw-db2-dev.properties}...valget{vzw-db2-dev.properties}
+____________________Report______________________
+ |reportDirName= |reportDirNameFull=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls |propName=MainSqlReportDir |propVal=
+net.amaware.serv.HtmlTargetServ=>ReportTextFile |directory{C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3} |HTML fileName{PRODUCT_BUNDLE_VALUES.exp.xls.html} |reportTextFile FileName{C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3/PRODUCT_BUNDLE_VALUES.exp.xls.report.txt}
+net.amaware.serv.HtmlTargetServ=>HTML Report File Opened |fileInName=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.html |fileInNameUse=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.html |Dir=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3 |Name=PRODUCT_BUNDLE_VALUES.exp.xls.html
+net.amaware.app.MainAppDataStore=>Processing Excel filename{C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls} |outFileName{C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.txt}
+__________________________________________________________net.amaware.autil.ACommDb:dbConGet()________________________________________________________
+=>net.amaware.autil.ACommDb=>DB Con Opened  |URL=jdbc:db2://DDFDAT1.ODC.VZWCORP.COM:446/NYOBDAT1:currentSchema=AQS3; |User=c0addan
+  |DBProduct=DB2  |DBVersion=DSN11010
+=>net.amaware.autil.ACommDb=>Current TS=2014-10-08-10.15.50.221869
+________________________________________________________________________________________________________________________________________________________
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert:processThis=>mapColsNum=7
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert:processThis StatementId=0 |SourcePropertyFileName=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.txt
+         |dbMaxRowsToReturn=999 |PropertyNumberOfMaxDataRows=999999999
+         |processMode{Normal} |extractFileSqlOut{} |isExtractFileSqlOut{false}
+ 
+net.amaware.serv.SourceServ:process=>PRODUCT_BUNDLE_VALUES.exp.xls |Source=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.txt
+           |#DataStoreRowEndNum=999999999 |#SourceProcessRowMax=999999999 |#AcommDbPrepSmtMaxRows=999
+=>mapColsNum=7
+=>net.amaware.aproc.SourceFileProc:SourceOpen=>FileName=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.txt |FieldDelimiter{,} |DataRowStart=3 |DataRowEnd=999999999
+
+net.amaware.serv.SourceServ:sourceStarted=>C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.txt |FileHeadRow#1 |DataHeadRow#2 |DataStart#3 |DataEnd#999999999
+ 
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert |extractFileName=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.summary.txt |getThisHtmlServ().getDirFileName()=C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.html______________________
+ 
+net.amaware.serv.SourceServ:process=>AboutTo sourceStart |ProcessMode=P
+ 
+net.amaware.aproc.SourceFileProc:sourceStart=> |ProcessMode=S |sourceDataRowEnd=999999999
+net.amaware.serv.SourceServ:process=>sourceStarted |ProcessMode=S
+net.amaware.serv.SourceServ=>HeadRow@Line#1 |lineItems{[EXPORT-XLS, PRODUCT_BUNDLE_VALUES, OPTIONS, 2014-10-08-07.06.49.250111, , , ]
+net.amaware.serv.SourceServ:doRecFileHead=>FileHeadData rec#1 |Data=[EXPORT-XLS, PRODUCT_BUNDLE_VALUES, OPTIONS, 2014-10-08-07.06.49.250111, , , ]
+net.amaware.serv.SourceServ:doSourceDataHeader=> |#DataColumns=7
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>DataColNames=|PRODUCT_BUNDLE_ID|OFFR_TYP_CD|OFFR_TYP_ID|DB_INSTANCE|USER_ID|UPDATE_TMSTAMP|INSERT_TMSTAMP|
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>DataColTitles=|PRODUCT_BUNDLE_ID|OFFR_TYP_CD|OFFR_TYP_ID|DB_INSTANCE|USER_ID|UPDATE_TMSTAMP|INSERT_TMSTAMP|
+net.amaware.serv.HtmlTargetServ=>outPageHeading=> |#Cols=7 |#Cloned=7 |DataHeadRow#2 |DataRow#0 |SourceRow#2
+net.amaware.serv.SourceServ:rowNext=>FirstDataRow@ 3 |ToEnd@ 999999999
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{1} BundleId{1} TypeID{88763} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{2} BundleId{1} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{3} BundleId{1} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{4} BundleId{1} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{5} BundleId{1} TypeID{76079} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{6} BundleId{2} TypeID{86994} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{7} BundleId{2} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{8} BundleId{2} TypeID{48553} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{9} BundleId{2} TypeID{66332} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{10} BundleId{2} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{11} BundleId{2} TypeID{70421} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{12} BundleId{2} TypeID{73584} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{13} BundleId{2} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{14} BundleId{2} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{15} BundleId{2} TypeID{76193} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{16} BundleId{2} TypeID{78104} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{17} BundleId{2} TypeID{79483} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{18} BundleId{3} TypeID{73442} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{19} BundleId{3} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{20} BundleId{3} TypeID{68869} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{21} BundleId{3} TypeID{68870} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{22} BundleId{3} TypeID{68871} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{23} BundleId{3} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{24} BundleId{3} TypeID{68873} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{25} BundleId{3} TypeID{68874} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{26} BundleId{3} TypeID{68876} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{27} BundleId{3} TypeID{68877} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{28} BundleId{3} TypeID{68994} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{29} BundleId{3} TypeID{72709} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{30} BundleId{3} TypeID{73502} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{31} BundleId{3} TypeID{73503} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{32} BundleId{3} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{33} BundleId{3} TypeID{75668} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{34} BundleId{3} TypeID{76375} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{35} BundleId{4} TypeID{86342} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{36} BundleId{4} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{37} BundleId{4} TypeID{48553} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{38} BundleId{4} TypeID{66332} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{39} BundleId{4} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{40} BundleId{4} TypeID{70421} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{41} BundleId{4} TypeID{73584} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{42} BundleId{4} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{43} BundleId{4} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{44} BundleId{4} TypeID{76193} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{45} BundleId{4} TypeID{76796} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{46} BundleId{4} TypeID{77453} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{47} BundleId{5} TypeID{86218} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{48} BundleId{5} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{49} BundleId{5} TypeID{48553} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{50} BundleId{5} TypeID{66332} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{51} BundleId{5} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{52} BundleId{5} TypeID{70421} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{53} BundleId{5} TypeID{73584} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{54} BundleId{5} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{55} BundleId{5} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{56} BundleId{5} TypeID{76193} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{57} BundleId{5} TypeID{76528} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{58} BundleId{6} TypeID{88763} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{59} BundleId{6} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{60} BundleId{6} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{61} BundleId{6} TypeID{76079} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{62} BundleId{8} TypeID{73443} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{63} BundleId{8} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{64} BundleId{8} TypeID{68869} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{65} BundleId{8} TypeID{68870} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{66} BundleId{8} TypeID{68871} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{67} BundleId{8} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{68} BundleId{8} TypeID{68873} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{69} BundleId{8} TypeID{68874} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{70} BundleId{8} TypeID{68876} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{71} BundleId{8} TypeID{68877} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{72} BundleId{8} TypeID{68994} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{73} BundleId{8} TypeID{72709} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{74} BundleId{8} TypeID{73502} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{75} BundleId{8} TypeID{73503} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{76} BundleId{8} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{77} BundleId{8} TypeID{75668} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{78} BundleId{8} TypeID{76375} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{79} BundleId{11} TypeID{88764} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{80} BundleId{11} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{81} BundleId{11} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{82} BundleId{11} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{83} BundleId{11} TypeID{76021} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{84} BundleId{13} TypeID{73444} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{85} BundleId{13} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{86} BundleId{13} TypeID{68869} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{87} BundleId{13} TypeID{68870} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{88} BundleId{13} TypeID{68871} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{89} BundleId{13} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{90} BundleId{13} TypeID{68873} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{91} BundleId{13} TypeID{68874} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{92} BundleId{13} TypeID{68876} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{93} BundleId{13} TypeID{68877} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{94} BundleId{13} TypeID{68994} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{95} BundleId{13} TypeID{72709} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{96} BundleId{13} TypeID{73502} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{97} BundleId{13} TypeID{73503} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{98} BundleId{13} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{99} BundleId{13} TypeID{75668} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{100} BundleId{13} TypeID{76375} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{101} BundleId{18} TypeID{88763} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{102} BundleId{18} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{103} BundleId{18} TypeID{76079} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{104} BundleId{23} TypeID{88764} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{105} BundleId{23} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{106} BundleId{23} TypeID{76021} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{107} BundleId{28} TypeID{88764} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{108} BundleId{28} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{109} BundleId{28} TypeID{76021} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{110} BundleId{501} TypeID{88764} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{111} BundleId{501} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{112} BundleId{501} TypeID{54307} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{113} BundleId{501} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{114} BundleId{501} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{115} BundleId{501} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{116} BundleId{501} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{117} BundleId{501} TypeID{75975} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{118} BundleId{501} TypeID{76021} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{119} BundleId{528} TypeID{88764} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{120} BundleId{528} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{121} BundleId{528} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{122} BundleId{528} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{123} BundleId{528} TypeID{76021} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{124} BundleId{528} TypeID{76193} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{125} BundleId{533} TypeID{88763} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{126} BundleId{533} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{127} BundleId{533} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{128} BundleId{533} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{129} BundleId{533} TypeID{76079} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{130} BundleId{533} TypeID{76193} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{131} BundleId{1028} TypeID{88763} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{132} BundleId{1028} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{133} BundleId{1028} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{134} BundleId{1028} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{135} BundleId{1028} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{136} BundleId{1028} TypeID{76079} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{137} BundleId{1028} TypeID{76193} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{138} BundleId{1033} TypeID{88764} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{139} BundleId{1033} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{140} BundleId{1033} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{141} BundleId{1033} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{142} BundleId{1033} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{143} BundleId{1033} TypeID{76021} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{144} BundleId{1033} TypeID{76193} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{145} BundleId{1038} TypeID{88763} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{146} BundleId{1038} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{147} BundleId{1038} TypeID{54307} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{148} BundleId{1038} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{149} BundleId{1038} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{150} BundleId{1038} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{151} BundleId{1038} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{152} BundleId{1038} TypeID{75975} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{153} BundleId{1038} TypeID{76079} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{154} BundleId{1511} TypeID{77773} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{155} BundleId{1511} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{156} BundleId{1511} TypeID{48555} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{157} BundleId{1511} TypeID{66332} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{158} BundleId{1511} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{159} BundleId{1511} TypeID{71774} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{160} BundleId{1511} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{161} BundleId{1511} TypeID{74485} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{162} BundleId{1511} TypeID{76898} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{163} BundleId{1512} TypeID{85694} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{164} BundleId{1512} TypeID{48526} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{165} BundleId{1512} TypeID{48553} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{166} BundleId{1512} TypeID{66332} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{167} BundleId{1512} TypeID{68872} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{168} BundleId{1512} TypeID{70421} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{169} BundleId{1512} TypeID{73578} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{170} BundleId{1512} TypeID{75632} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{171} BundleId{1512} TypeID{75799} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{172} BundleId{1512} TypeID{75804} msg{Insert...New Inserted}
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert=>Processed Row#{173} BundleId{1512} TypeID{75975} msg{Insert...New Inserted}
+net.amaware.aproc.SourceFileProc |At END row#=175
+com.vzw.apps.m2mtabins.ProcPRODUCT_BUNDLE_VALUESInsert:doDataRowsEnded=>StatementId=1 @SourceRows#175 @DataRow#173 |#MaxRows=999999999
+net.amaware.serv.SourceServ:sourceEnded=>C:\Users\c0addan\amawareJavaDev\projects\VZW-M2M-TAB-INS\Data\AQS3\PRODUCT_BUNDLE_VALUES.exp.xls.txt |#FileRows=175 |#DataRows=173
+net.amaware.aproc.SourceFileProc:sourceEnded=> 
+=>net.amaware.autil.ACommDb=>DB Con Commit 
+=>net.amaware.autil.ACommDb=>DB Con Closed 
+=>net.amaware.autil.ACommDb=>Complete TS=2014-10-08 10:15:53.534
