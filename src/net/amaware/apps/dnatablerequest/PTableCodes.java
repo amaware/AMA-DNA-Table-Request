@@ -58,8 +58,11 @@ public class PTableCodes extends DataStoreReport {
 	//------------------db area-----------------------------
     //DbtTABLE_CODES dbtTABLE_CODES= new DbtTABLE_CODES(this);
     UTABLE_CODES uTABLE_CODES= new UTABLE_CODES();
-	private DbProcessStatus uTABLE_CODES_DbProcessStatus = DbProcessStatus.NotFound;    
     //
+    LOGS_E eLOGS= new LOGS_E();
+    //
+	private DbStatus dbProcessStatus = DbStatus.NotFound;    
+	//
 	//------------------file area-----------------------------
     AFileO extractFileO = new AFileO();
 	String extractFileName    = "";	
@@ -249,39 +252,18 @@ public class PTableCodes extends DataStoreReport {
 			    
 			    );
 		
-    	switch (uTABLE_CODES.dbStatus) {
-    	
+    	dbProcessStatus=uTABLE_CODES.dbStatus;
+    	switch (dbProcessStatus) {
 		case OK: 
-		    acomm.addPageMsgsLineOut(thisClassName+ "=>Processed Row#{" + fileRowNum + "}" 
-	                + " Found Where{" + uTABLE_CODES.getInWhereColValString(acomm) + "}"
-	                + " dbStatus{" + uTABLE_CODES.dbStatus.toString() + "}"
-	                );
-			
+		    uTABLE_CODES.outLogDbStatus(acomm, uTABLE_CODES.thisClassName, getSourceDataRowsRead());
 			break;
-    	
-    	
 		case NotFound: 
-		    acomm.addPageMsgsLineOut(thisClassName+ "=>Processed Row#{" + fileRowNum + "}" 
-	                + " NOT Found Where{" + uTABLE_CODES.getInWhereColValString(acomm) + "}"
-	                + " dbStatus{" + uTABLE_CODES.dbStatus.toString() + "}"
-	                );
-			
+		    uTABLE_CODES.outLogDbStatus(acomm, uTABLE_CODES.thisClassName, getSourceDataRowsRead());
 			break;
-
 		default:
-			
-		    acomm.addPageMsgsLineOut(thisClassName+ "=>Processed Row#{" + fileRowNum + "}" 
-	                + " Where{" + uTABLE_CODES.getInWhereColValString(acomm) + "}"
-	                + " UNHANDLED dbStatus{" + uTABLE_CODES.dbStatus.toString() + "}"
-	                );
-			
-			
+		    uTABLE_CODES.outLogDbStatus(acomm, uTABLE_CODES.thisClassName, getSourceDataRowsRead());
 			break;
 		}
-    	
-    	
-        //		
-
 		//
 		return true; // or false to stop processing of file
 
@@ -330,17 +312,57 @@ public class PTableCodes extends DataStoreReport {
 					);
  	    	
  	    	//super.doDataRowsEnded(acomm);
+ 	    	/*
  	    	throw new AException(acomm, "Requested MAX ROWS EXCEEDED...MORE ROWS EXIST" 
  	    			+ " @DataRow Start #" + getSourceDataRowStartNum()
     				+ " @DataRow End# " + getSourceDataRowEndNum() 	    			
  	    			+ " @SourceRows #" + getSourceRowNum()
                		+ " @DataRow# " + getDataRowNum()
  	    					);
-         }
+ 	    	*/
+        }
+        //
         
-        
-        
+        String outMsg=thisClassName+"=>Processing{" + eLOGS.thisClassName + "}";
+		acomm.addPageMsgsLineOut(outMsg);
+		
+		//getThisHtmlServ().outPageLineWarning(acomm,outMsg);
+		rptOutHeadingLine(acomm, "LOGS Results with TABLE_CODES ");
+ 	    	
+ 	    eLOGS.doProcessResult(acomm
+ 	                , "" //id
+ 	                , "" // create_ts
+ 	                , "contact" // "login"  // entry_type
+ 	                , "" // entry_subject
+ 	                , "" // entry_topic
+ 	                , "" // entry_msg
+ 	                , "" // user_name
+ 	                , "" // user_email
+ 	                , "" // user_ip
+ 				    
+ 				    , this
+ 				    , 99999
+ 				    );
+ 			
+ 	    dbProcessStatus=eLOGS.dbStatus;
+ 	    switch (dbProcessStatus) {
+ 		  case OK: 
+ 				eLOGS.outLogDbStatus(acomm, eLOGS.thisClassName, getSourceDataRowsRead());
+ 				break;
+ 		  case NotFound: 
+ 				eLOGS.outLogDbStatus(acomm, eLOGS.thisClassName, getSourceDataRowsRead());
+ 				break;
+ 		  default:
+ 				eLOGS.outLogDbStatus(acomm, eLOGS.thisClassName, getSourceDataRowsRead());
+ 				break;
+ 		}
+        //
+ 	   
+ 	    //
 		return true;
+		
+		
+		
 		
 	}
  		
