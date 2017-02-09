@@ -1,0 +1,90 @@
+=>net.amaware.autil.ACommDb=>LOGFILE |Dir=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |Name=angel_000.log.txt
+=>net.amaware.autil.ACommDb=>Start @2017-02-05 10:54:59.22 |LogFileName=angel_000.log.txt
+    |userName=angel_000 |userHome=C:\Users\angel_000
+    |userDirectoryName=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |environment=Windows 8
+_______________Input Args_________________
+Arg#0=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls
+!!!MainApp!!! delim{	}
+!!!MainApp!!! sourceFileProc delim{	}
+_______________Input Args_________________
+Arg#0=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls
+argSqlFileDir=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request
+argSqlFileFullName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls
+argSqlFileExt=XLS
+argSqlFileNameSansExt=table_codes-request
+------------------------------
+------------------------------
+isFromfile=true
+------------------------------
+_____________________end___________________
+__________PROCESSING DATA FILE________________
+____________________Report______________________
+ |reportDirName= |reportDirNameFull= |propName=MainSqlReportDir |propVal=
+=>net.amaware.serv.SourceProperty=>PropName{dbUserPassword}...value{password being HIDDEN}
+=>net.amaware.serv.SourceProperty=>PropName{sourceHeadRowStart}...value{0}...valget{0}
+=>net.amaware.serv.SourceProperty=>PropName{sourceName}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDir}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{sourceHeadRowEnd}...value{0}...valget{0}
+=>net.amaware.serv.SourceProperty=>PropName{[ACOM-DB]}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{[ACOM-USER-FILES]}...value{}...valget{}
+=>net.amaware.serv.SourceProperty=>PropName{propBasePropFile}...value{dna-dnapersonal.properties}...valget{dna-dnapersonal.properties}
+=>net.amaware.serv.SourceProperty=>PropName{dbDriverClass}...value{com.mysql.jdbc.Driver}...valget{com.mysql.jdbc.Driver}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataHeadRowStart}...value{0}...valget{0}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataRowStart}...value{1}...valget{1}
+=>net.amaware.serv.SourceProperty=>PropName{propBasePropDir}...value{/projects/amawareJavaDev/propertiesAMAWARE}...valget{/projects/amawareJavaDev/propertiesAMAWARE}
+=>net.amaware.serv.SourceProperty=>PropName{dbURL}...value{jdbc:mysql://db153.pair.com:3306/dnapersonal_dna}...valget{jdbc:mysql://db153.pair.com:3306/dnapersonal_dna}
+=>net.amaware.serv.SourceProperty=>PropName{reportFontSize}...value{1em}...valget{1em}
+=>net.amaware.serv.SourceProperty=>PropName{reportAsTextFile}...value{y}...valget{y}
+=>net.amaware.serv.SourceProperty=>PropName{sourceNameFull}...value{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls}...valget{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataHeadRowEnd}...value{0}...valget{0}
+=>net.amaware.serv.SourceProperty=>PropName{dbUserID}...value{1024057_4_w}...valget{1024057_4_w}
+=>net.amaware.serv.SourceProperty=>PropName{sourceDataRowEnd}...value{999999999}...valget{999999999}
+=>net.amaware.serv.SourceProperty=>PropName{dbMaxRowsReturn}...value{2000}...valget{2000}
+=>net.amaware.serv.SourceProperty=>PropName{[ACOM-BASE-PROPERTIES]}...value{}...valget{}
+____________________Report______________________
+ |reportDirName= |reportDirNameFull=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls |propName=MainSqlReportDir |propVal=
+net.amaware.serv.HtmlTargetServ=>ReportTextFile |directory{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request} |HTML fileName{table_codes-request.xls.html} |reportTextFile FileName{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request/table_codes-request.xls.report.txt}
+net.amaware.serv.HtmlTargetServ=>HTML Report File Opened |fileInName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html |fileInNameUse=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html |Dir=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request |Name=table_codes-request.xls.html
+net.amaware.app.MainAppDataStore=>Processing Excel filename{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls} |outFileName{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt}
+__________________________________________________________net.amaware.autil.ACommDb:dbConGet()________________________________________________________
+=>net.amaware.autil.ACommDb=>DB Con Opened  |URL=jdbc:mysql://db153.pair.com:3306/dnapersonal_dna |User=1024057_4_w
+  |DBProduct=MySQL  |DBVersion=5.6.31-log
+=>net.amaware.autil.ACommDb=>Current TS=2017-02-05 10:55:09.0
+________________________________________________________________________________________________________________________________________________________
+net.amaware.apps.dnatablerequest.PTableCodes:processThis=>mapColsNum=5 titles{tab_name|code_name|code_value|user_mod_id|user_mod_ts|}
+net.amaware.apps.dnatablerequest.PTableCodes:processThis StatementId=0 |SourcePropertyFileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt
+         |dbMaxRowsToReturn=2000 |PropertyNumberOfMaxDataRows=999999
+ 
+net.amaware.serv.SourceServ:process=>table_codes-request.xls |Source=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt
+           |#DataStoreRowEndNum=999999 |#SourceProcessRowMax=999999999 |#AcommDbPrepSmtMaxRows=2000
+=>mapColsNum=5
+=>net.amaware.aproc.SourceFileProc:SourceOpen=>FileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt |FieldDelimiter{TAB} |DataRowStart=2 |DataRowStart=2 |DataRowEnd=999999
+
+net.amaware.serv.SourceServ:sourceStarted=>C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt |FileHeadRow#0 |DataHeadRow#1 |DataStart#2 |DataEnd#999999
+ 
+net.amaware.apps.dnatablerequest.PTableCodes |extractFileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.summary.txt |getThisHtmlServ().getDirFileName()=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html______________________
+ 
+net.amaware.serv.SourceServ:process=>AboutTo sourceStart |ProcessMode=P
+ 
+net.amaware.aproc.SourceFileProc:sourceStart=> |ProcessMode=S |sourceDataRowEnd=999999
+net.amaware.serv.SourceServ:process=>sourceStarted |ProcessMode=S
+net.amaware.serv.SourceServ:doSourceDataHeader=> |#DataColumns=5
+net.amaware.apps.dnatablerequest.PTableCodes=>DataColNames=|tab_name|code_name|code_value|user_mod_id|user_mod_ts|
+net.amaware.apps.dnatablerequest.PTableCodes=>DataColTitles=|tab_name|code_name|code_value|user_mod_id|user_mod_ts|
+net.amaware.serv.HtmlTargetServ=>outPageHeading=> |#Cols=5 |#Cloned=5 |DataHeadRow#1 |DataRow#0 |SourceRow#1
+net.amaware.serv.SourceServ:rowNext=>FirstDataRow@ 2 |ToEnd@ 999999
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{1} DB Row Found Where{ |tab_name{logs}} dbStatus{OK}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{2} DB Row Found Where{ |tab_name{roles}} dbStatus{OK}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{3} DB Row NOT Found Where{ |tab_name{bad}} dbStatus{NotFound}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{4} DB Row Found Where{ |tab_name{roles} |code_name{person}} dbStatus{OK}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{5} DB Row Found Where{ |tab_name{roles} |code_name{person} |code_value{manager}} dbStatus{OK}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{6} DB Row NOT Found Where{ |tab_name{last bad}} dbStatus{NotFound}
+net.amaware.aproc.SourceFileProc |At END row#=7
+net.amaware.apps.dnatablerequest.PTableCodes:doDataRowsEnded=>StatementId=1 @SourceRows#7 @DataRow#6 |#MaxRows=999999
+net.amaware.apps.dnatablerequest.PTableCodes=>Processing{net.amaware.apps.dnatablerequest.LOGS_E}
+net.amaware.apps.dnatablerequest.LOGS_E=>For Input #{6} DB Row Found Where{ |entry_type{login}} dbStatus{OK}
+net.amaware.serv.SourceServ:sourceEnded=>C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt |#FileRows=7 |#DataRows=6
+net.amaware.aproc.SourceFileProc:sourceEnded=> 
+=>net.amaware.autil.ACommDb=>DB Con Commit=> TotRowSelectCnts{129} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
+=>net.amaware.autil.ACommDb=>DB Con Closed=> TotRowSelectCnts{129} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
+=>net.amaware.autil.ACommDb=>Complete TS=2017-02-05 10:55:01.972
