@@ -27,7 +27,7 @@ public class MainDnaTableRequest {
 		String tableNameToProcess="unknown";
 		//
 		try {  
-			acomm = new ACommDb(propFileName);
+			acomm = new ACommDb(propFileName, args);
 			
 		    String inFileName = inputArgsSql(acomm,args);
 		    

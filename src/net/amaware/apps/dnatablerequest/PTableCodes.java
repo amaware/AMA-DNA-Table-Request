@@ -26,6 +26,7 @@ import com.amaware.dna.query.TABLE_CODES;
 import net.amaware.app.DataStoreReport;
 import net.amaware.aproc.SqlPsQueryProc;
 import net.amaware.aproc.SqlPsApp.DbStatus;
+import net.amaware.autil.AComm;
 import net.amaware.autil.ACommDb;
 import net.amaware.autil.ADataColResult;
 import net.amaware.autil.AException;
@@ -133,7 +134,7 @@ public class PTableCodes extends DataStoreReport {
 
 		acomm.addPageMsgsLineOut(" ");
 		
-		extractFileName = getThisHtmlServ().getDirFileName().replace(".html", extractFileExt);
+		extractFileName = acomm.getOutFileDirectoryWithSep()+AComm.getArgFileName()+extractFileExt;
 		
 		try {
 			extractFileO.openFile(extractFileName);

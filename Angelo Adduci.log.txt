@@ -1,11 +1,14 @@
 =>net.amaware.autil.ACommDb=>LOGFILE |Dir=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |Name=Angelo Adduci.log.txt
-=>net.amaware.autil.ACommDb=>Start @2017-02-05 20:00:04.553 |LogFileName=Angelo Adduci.log.txt
+=>net.amaware.autil.ACommDb=>Start @2017-02-20 20:45:41.635 |LogFileName=Angelo Adduci.log.txt
     |userName=Angelo Adduci |userHome=C:\Users\Angelo Adduci
     |userDirectoryName=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |environment=Windows 10
+    |user.dir=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |dir seperator{\}
+AComm=>Arg#0=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls
+AComm=>ArgFileFullName{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls} |isPath{false} |ArgFilePath{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request} |ArgFileName{\table_codes-request.xls}
+AComm=>OutFileDirectoryWithSep{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\output\\}
 _______________Input Args_________________
 Arg#0=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls
 !!!MainApp!!! delim{	}
-!!!MainApp!!! sourceFileProc delim{	}
 _______________Input Args_________________
 Arg#0=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls
 argSqlFileDir=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request
@@ -21,6 +24,7 @@ __________PROCESSING DATA FILE________________
 ____________________Report______________________
  |reportDirName= |reportDirNameFull= |propName=MainSqlReportDir |propVal=
 =>net.amaware.serv.SourceProperty=>PropName{dbUserPassword}...value{password being HIDDEN}
+=>net.amaware.serv.SourceProperty=>PropName{FileOutputDir}...value{output}...valget{output}
 =>net.amaware.serv.SourceProperty=>PropName{sourceHeadRowStart}...value{0}...valget{0}
 =>net.amaware.serv.SourceProperty=>PropName{sourceName}...value{}...valget{}
 =>net.amaware.serv.SourceProperty=>PropName{sourceDir}...value{}...valget{}
@@ -43,26 +47,27 @@ ____________________Report______________________
 =>net.amaware.serv.SourceProperty=>PropName{[ACOM-BASE-PROPERTIES]}...value{}...valget{}
 ____________________Report______________________
  |reportDirName= |reportDirNameFull=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls |propName=MainSqlReportDir |propVal=
-net.amaware.serv.HtmlTargetServ=>ReportTextFile |directory{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request} |HTML fileName{table_codes-request.xls.html} |reportTextFile FileName{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request/table_codes-request.xls.report.txt}
-net.amaware.serv.HtmlTargetServ=>HTML Report File Opened |fileInName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html |fileInNameUse=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html |Dir=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request |Name=table_codes-request.xls.html
-net.amaware.app.MainAppDataStore=>Processing Excel filename{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls} |outFileName{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt}
+!!!MainApp!!! sourceFileProc delim{	}
+net.amaware.serv.HtmlTargetServ=>ReportTextFile |directory{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\output} |HTML fileName{table_codes-request.xls.html} |reportTextFile FileName{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\output\table_codes-request.xls.report.txt}
+net.amaware.serv.HtmlTargetServ=>HTML Report File Opened |fileInName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html |fileInNameUse=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html |Dir=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\output |Name=table_codes-request.xls.html
+net.amaware.app.MainAppDataStore=>Processing Excel filename{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls} |outFileName{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt}
 __________________________________________________________net.amaware.autil.ACommDb:dbConGet()________________________________________________________
 =>net.amaware.autil.ACommDb=>DB Con Opened  |URL=jdbc:mysql://db153.pair.com:3306/dnapersonal_dna |User=1024057_4_w
   |DBProduct=MySQL  |DBVersion=5.6.31-log
-=>net.amaware.autil.ACommDb=>Current TS=2017-02-05 20:00:08.0
+=>net.amaware.autil.ACommDb=>Current TS=2017-02-20 20:45:45.0
 ________________________________________________________________________________________________________________________________________________________
 net.amaware.apps.dnatablerequest.PTableCodes:processThis=>mapColsNum=5 titles{tab_name|code_name|code_value|user_mod_id|user_mod_ts|}
-net.amaware.apps.dnatablerequest.PTableCodes:processThis StatementId=0 |SourcePropertyFileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt
+net.amaware.apps.dnatablerequest.PTableCodes:processThis StatementId=0 |SourcePropertyFileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt
          |dbMaxRowsToReturn=2000 |PropertyNumberOfMaxDataRows=999999
  
-net.amaware.serv.SourceServ:process=>table_codes-request.xls |Source=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt
+net.amaware.serv.SourceServ:process=>table_codes-request.xls |Source=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt
            |#DataStoreRowEndNum=999999 |#SourceProcessRowMax=999999999 |#AcommDbPrepSmtMaxRows=2000
 =>mapColsNum=5
-=>net.amaware.aproc.SourceFileProc:SourceOpen=>FileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt |FieldDelimiter{TAB} |DataRowStart=2 |DataRowStart=2 |DataRowEnd=999999
+=>net.amaware.aproc.SourceFileProc:SourceOpen=>FileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt |FieldDelimiter{TAB} |DataRowStart=2 |DataRowStart=2 |DataRowEnd=999999
 
-net.amaware.serv.SourceServ:sourceStarted=>C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.txt |FileHeadRow#0 |DataHeadRow#1 |DataStart#2 |DataEnd#999999
+net.amaware.serv.SourceServ:sourceStarted=>C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt |FileHeadRow#0 |DataHeadRow#1 |DataStart#2 |DataEnd#999999
  
-net.amaware.apps.dnatablerequest.PTableCodes |extractFileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.summary.txt |getThisHtmlServ().getDirFileName()=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html______________________
+net.amaware.apps.dnatablerequest.PTableCodes |extractFileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\output\\\table_codes-request.xls.summary.txt |getThisHtmlServ().getDirFileName()=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.html______________________
  
 net.amaware.serv.SourceServ:process=>AboutTo sourceStart |ProcessMode=P
  
@@ -75,9 +80,4 @@ net.amaware.serv.HtmlTargetServ=>outPageHeading=> |#Cols=5 |#Cloned=5 |DataHeadR
 net.amaware.serv.SourceServ:rowNext=>FirstDataRow@ 2 |ToEnd@ 999999
 net.amaware.apps.dnatablerequest.LOGS_E=>doProcessRptEnd: appOpenQueryCnt{2}
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{1}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{1} DB Row Found Where{ |tab_name{logs}} dbStatus{OK}
-net.amaware.apps.dnatablerequest.LOGS_E=>doProcessRptEnd: appOpenQueryCnt{0}
-net.amaware.apps.dnatablerequest.LOGS_E=>doProcessRptEnd: Query Ending...appOpenQueryCnt <= 1
-***AException***==>net.amaware.apps.dnatablerequest.UTABLE_CODES:queryRow=>ResultSet is null
-=>net.amaware.autil.ACommDb=>DB Con Rollback=>These were rollbacked=> TotRowSelectCnts{3} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
-=>net.amaware.autil.ACommDb=>DB Con Closed=> TotRowSelectCnts{0} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
+net.amawar
