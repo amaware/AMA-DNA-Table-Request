@@ -15,7 +15,7 @@ public class UTABLE_CODES extends TABLE_CODES {
  final String thisClassName = this.getClass().getName();
  
  //
- LOGS_E eLOGS= new LOGS_E();
+ ULOGS eLOGS= new ULOGS();
  //
  
 /*
@@ -52,25 +52,32 @@ public void doProcessRowFound(ACommDb acomm, DataStoreReport dsr) {
 	 
 	 if (getCodeValue().contentEquals("email")) {
 		 dsr.rptOutLine(acomm, this.getClass().getName() 
-				       + "...Report Row being bypassed for{" + getCodeValue() +  "}" ,dsr.htmlLineOkStyle);
+				       + "...Report Row being bypassed for{" + getCodeValue() +  "}" ,dsr.htmlLineWarningStyle);
 	 } else {
+		 
+		 acomm.addPageMsgsLineOut(thisClassName+ " Row Found for"+this.getInWhereColValString(acomm));		 
+		 
 	     reportRowOut(acomm, dsr,"");
-	     
-	 	    eLOGS.doProcessResult(acomm
- 	                , "" //id
- 	                , "" // create_ts
- 	                , getCodeValue() // "login"  // entry_type
- 	                , "" // entry_subject
- 	                , "" // entry_topic
- 	                , "" // entry_msg
- 	                , "" // user_name
- 	                , "" // user_email
- 	                , "" // user_ip
- 				    
- 				    , dsr
- 				    , 99999
- 				    );
-	     
+	     if (getTabName().contentEquals("logs")) {
+		 	    eLOGS.doProcessResult(acomm
+	 	                , "" //id
+	 	                , "" // create_ts
+	 	                , getCodeValue() // "login"  // entry_type
+	 	                , "" // entry_subject
+	 	                , "" // entry_topic
+	 	                , "" // entry_msg
+	 	                , "" // user_name
+	 	                , "" // user_email
+	 	                , "" // user_ip
+	 				    
+	 				    , dsr
+	 				    , 99999
+	 				    );
+	     } else {
+			 dsr.rptOutLine(acomm, this.getClass().getName() 
+				       + "...Unknown table name{" + getTabName() +  "}" ,dsr.htmlLineErrorStyle);
+	     }
+
 	     
 	 }
 

@@ -60,7 +60,7 @@ public class PTableCodes extends DataStoreReport {
     //DbtTABLE_CODES dbtTABLE_CODES= new DbtTABLE_CODES(this);
     UTABLE_CODES uTABLE_CODES= new UTABLE_CODES();
     //
-    LOGS_E eLOGS= new LOGS_E();
+    //ULOGS uLOGS= new ULOGS();
     //
 	private DbStatus dbProcessStatus = DbStatus.NotFound;    
 	//
@@ -240,6 +240,7 @@ public class PTableCodes extends DataStoreReport {
 					);
 		}
 		//
+		
     	uTABLE_CODES.doProcessResult(acomm
 			    , "" //String id
 			    , fTabName.getColumnValueTrim() //String tab_name
@@ -265,6 +266,8 @@ public class PTableCodes extends DataStoreReport {
 		    uTABLE_CODES.outLogDbStatus(acomm, uTABLE_CODES.thisClassName, getSourceDataRowsRead());
 			break;
 		}
+		
+		
 		//
 		return true; // or false to stop processing of file
 
@@ -323,40 +326,7 @@ public class PTableCodes extends DataStoreReport {
  	    	*/
         }
         //
-        
-        String outMsg=thisClassName+"=>Processing{" + eLOGS.thisClassName + "}";
-		acomm.addPageMsgsLineOut(outMsg);
-		
-		//getThisHtmlServ().outPageLineWarning(acomm,outMsg);
-		rptOutHeadingLine(acomm, "LOGS Results with TABLE_CODES ");
- 	    	
- 	    eLOGS.doProcessResult(acomm
- 	                , "" //id
- 	                , "" // create_ts
- 	                , "contact" // "login"  // entry_type
- 	                , "" // entry_subject
- 	                , "" // entry_topic
- 	                , "" // entry_msg
- 	                , "" // user_name
- 	                , "" // user_email
- 	                , "" // user_ip
- 				    
- 				    , this
- 				    , 99999
- 				    );
- 			
- 	    dbProcessStatus=eLOGS.dbStatus;
- 	    switch (dbProcessStatus) {
- 		  case OK: 
- 				eLOGS.outLogDbStatus(acomm, eLOGS.thisClassName, getSourceDataRowsRead());
- 				break;
- 		  case NotFound: 
- 				eLOGS.outLogDbStatus(acomm, eLOGS.thisClassName, getSourceDataRowsRead());
- 				break;
- 		  default:
- 				eLOGS.outLogDbStatus(acomm, eLOGS.thisClassName, getSourceDataRowsRead());
- 				break;
- 		}
+        //doLogs(acomm, uTABLE_CODES);
         //
  	   
  	    //
@@ -366,7 +336,45 @@ public class PTableCodes extends DataStoreReport {
 		
 		
 	}
- 		
+ /*		
+	 public void doLogs(ACommDb acomm, TABLE_CODES _qClass) {
+		 
+	        String outMsg=thisClassName+"=>Processing{" + uLOGS.thisClassName + "}";
+			acomm.addPageMsgsLineOut(outMsg);
+			
+			//getThisHtmlServ().outPageLineWarning(acomm,outMsg);
+			rptOutHeadingLine(acomm, "LOGS Results with TABLE_CODES ");
+	 	    	
+	 	    uLOGS.doProcessResult(acomm
+	 	                , "" //id
+	 	                , "" // create_ts
+	 	                , "contact" // "login"  // entry_type
+	 	                , "" // entry_subject
+	 	                , "" // entry_topic
+	 	                , "" // entry_msg
+	 	                , "" // user_name
+	 	                , "" // user_email
+	 	                , "" // user_ip
+	 				    
+	 				    , this
+	 				    , 99999
+	 				    );
+	 			
+	 	    dbProcessStatus=uLOGS.dbStatus;
+	 	    switch (dbProcessStatus) {
+	 		  case OK: 
+	 				uLOGS.outLogDbStatus(acomm, uLOGS.thisClassName, getSourceDataRowsRead());
+	 				break;
+	 		  case NotFound: 
+	 				uLOGS.outLogDbStatus(acomm, uLOGS.thisClassName, getSourceDataRowsRead());
+	 				break;
+	 		  default:
+	 				uLOGS.outLogDbStatus(acomm, uLOGS.thisClassName, getSourceDataRowsRead());
+	 				break;
+	 		}
+		 
+	 }
+*/	
 	//
 	/**
  	 * Following is generated for table in table generated file....copyied here for use in application
@@ -386,7 +394,8 @@ public class PTableCodes extends DataStoreReport {
 			//
     } //End doDSRFieldsToTable TABLE_CODES _qClass
 			//
-		 
+
+	 
 	/**
  	 * Copy from table Class fields to input file fields - this is generated and copied here 
 	 */		
