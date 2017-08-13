@@ -1,5 +1,5 @@
 =>net.amaware.autil.ACommDb=>LOGFILE |Dir=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |Name=Angelo Adduci.log.txt
-=>net.amaware.autil.ACommDb=>Start @2017-03-19 19:42:22.472 |LogFileName=Angelo Adduci.log.txt
+=>net.amaware.autil.ACommDb=>Start @2017-03-19 19:47:47.223 |LogFileName=Angelo Adduci.log.txt
     |userName=Angelo Adduci |userHome=C:\Users\Angelo Adduci
     |userDirectoryName=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |environment=Windows 10
     |user.dir=C:\projects\amawareJavaDev\projects\AMA-DNA-Table-Request |dir seperator{\}
@@ -51,7 +51,7 @@ net.amaware.app.MainAppDataStore=>Processing Excel filename{C:\projects\amawareD
 __________________________________________________________net.amaware.autil.ACommDb:dbConGet()________________________________________________________
 =>net.amaware.autil.ACommDb=>DB Con Opened  |URL=jdbc:mysql://db141b.pair.com:3306/amaware_dna |User=amaware_9_w
   |DBProduct=MySQL  |DBVersion=5.6.31-log
-=>net.amaware.autil.ACommDb=>Current TS=2017-03-19 19:42:25.0
+=>net.amaware.autil.ACommDb=>Current TS=2017-03-19 19:47:49.0
 ________________________________________________________________________________________________________________________________________________________
 net.amaware.apps.dnatablerequest.PTableCodes:processThis=>mapColsNum=5 titles{tab_name|code_name|code_value|user_mod_id|user_mod_ts|}
 net.amaware.apps.dnatablerequest.PTableCodes:processThis StatementId=0 |SourcePropertyFileName=C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt
@@ -76,9 +76,11 @@ net.amaware.apps.dnatablerequest.PTableCodes=>DataColTitles=|tab_name|code_name|
 net.amaware.serv.HtmlTargetServ=>outPageHeading=> |#Cols=5 |#Cloned=5 |DataHeadRow#1 |DataRow#0 |SourceRow#1
 net.amaware.serv.SourceServ:rowNext=>FirstDataRow@ 2 |ToEnd@ 999999
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{logs}
-net.amaware.apps.dnatablerequest.ULOGS=>doProcessRptEnd: appOpenQueryCnt{1}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{0}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: Query Ending...appOpenQueryCnt <= 1
+net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{logs}
+net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{logs}
+net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{logs}
+net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{logs}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{1}
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{1} DB Row Found Where{ |tab_name{logs}} dbStatus{OK}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles}
@@ -86,30 +88,30 @@ net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-1}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{0}
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: Query Ending...appOpenQueryCnt <= 1
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{2} DB Row Found Where{ |tab_name{roles}} dbStatus{OK}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-2}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-1}
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: Query Ending...appOpenQueryCnt <= 1
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{3} DB Row NOT Found Where{ |tab_name{bad}} dbStatus{NotFound}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles} |code_name{person}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles} |code_name{person}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles} |code_name{person}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-3}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-2}
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: Query Ending...appOpenQueryCnt <= 1
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{4} DB Row Found Where{ |tab_name{roles} |code_name{person}} dbStatus{OK}
 net.amaware.apps.dnatablerequest.UTABLE_CODES Row Found for |tab_name{roles} |code_name{person} |code_value{manager}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-4}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-3}
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: Query Ending...appOpenQueryCnt <= 1
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{5} DB Row Found Where{ |tab_name{roles} |code_name{person} |code_value{manager}} dbStatus{OK}
-net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-5}
+net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: appOpenQueryCnt{-4}
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>doProcessRptEnd: Query Ending...appOpenQueryCnt <= 1
 net.amaware.apps.dnatablerequest.UTABLE_CODES=>For Input #{6} DB Row NOT Found Where{ |tab_name{last bad}} dbStatus{NotFound}
 net.amaware.aproc.SourceFileProc |At END row#=7
 net.amaware.apps.dnatablerequest.PTableCodes:doDataRowsEnded=>StatementId=1 @SourceRows#7 @DataRow#6 |#MaxRows=999999
 net.amaware.serv.SourceServ:sourceEnded=>C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt |#FileRows=7 |#DataRows=6
 net.amaware.aproc.SourceFileProc:sourceEnded=> 
-=>net.amaware.autil.ACommDb=>DB Con Commit=> TotRowSelectCnts{553} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
-=>net.amaware.autil.ACommDb=>DB Con Closed=> TotRowSelectCnts{553} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
+=>net.amaware.autil.ACommDb=>DB Con Commit=> TotRowSelectCnts{16} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
+=>net.amaware.autil.ACommDb=>DB Con Closed=> TotRowSelectCnts{16} TotRowInsertCnts{0} TotRowInsertDupsCnts{0} TotRowUpdateCnts{0} TotRowDeleteCnts{0}
 =>MainAppDataStore=>Deleteing File{C:\projects\amawareData\AMA-DNA\db-dna\data\AMA-DNA-Table-Request\table_codes-request.xls.temp.txt} Status{true}
-=>net.amaware.autil.ACommDb=>Complete TS=2017-03-19 19:42:25.372
+=>net.amaware.autil.ACommDb=>Complete TS=2017-03-19 19:47:49.26

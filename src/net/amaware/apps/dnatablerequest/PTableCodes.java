@@ -49,7 +49,7 @@ public class PTableCodes extends DataStoreReport {
 	final String thisClassName = this.getClass().getName();
 	//
 	//*SqlApp AutoGen @2016-12-10 09:49:03.0
-    //protected ADataColResult fId = mapDataCol("id");
+    //protected ADataColResult fId = mapDataCol("table_name");
     protected ADataColResult fTabName = mapDataCol("tab_name");
     protected ADataColResult fCodeName = mapDataCol("code_name");
     protected ADataColResult fCodeValue = mapDataCol("code_value");
@@ -58,7 +58,10 @@ public class PTableCodes extends DataStoreReport {
     //
 	//------------------db area-----------------------------
     //DbtTABLE_CODES dbtTABLE_CODES= new DbtTABLE_CODES(this);
-    UTABLE_CODES uTABLE_CODES= new UTABLE_CODES();
+    UTABLE_CODES_ULOGS uTABLE_CODES_ULOGS= null;
+    UTABLE_CODES uTABLE_CODES= null;
+    ULOGS aDnaULOGS= null;
+    ULOGS aAmawareLOGS= null;
     //
     //ULOGS uLOGS= new ULOGS();
     //
@@ -84,14 +87,18 @@ public class PTableCodes extends DataStoreReport {
 	//Date date = new Date();
 	//dateFormat.format(date)
 	//
-	//Inline Classes
+	ACommDb acomm=null;
+	String[] args=null;
     //
     //	
 	/**
 	 * 
 	 */
-	public PTableCodes() {
+	public PTableCodes(ACommDb iacomm,String[] iargs) {
 		super();
+		
+		acomm=iacomm;
+		args=iargs;
 
 	}
 
@@ -100,6 +107,7 @@ public class PTableCodes extends DataStoreReport {
 		
 		super.processThis(acomm, _aProperty, _aHtmlServ); // always call this
 		//
+		
 		//
 		//String extractFileName = _aProperty.getValue(SourceProperty.getPropNameFull());
 		//extractFileNamePrefix= getThisHtmlServ().getDirFileName().replaceAll(".txt.html", "");
@@ -153,6 +161,11 @@ public class PTableCodes extends DataStoreReport {
 		//} catch (SQLException e1) {
 		//	throw new AExceptionSql(acomm, e1, thisClassName + "=>");
 		//}
+		  
+		uTABLE_CODES= new UTABLE_CODES(acomm, "MainDbDnaTABLE_CODES.properties", args);
+		uTABLE_CODES_ULOGS= new UTABLE_CODES_ULOGS(acomm, "MainDbDnaTABLE_CODES.properties", args);
+		aDnaULOGS= new ULOGS(acomm, "MainDbDnaLOGS.properties", args);
+		aAmawareLOGS= new ULOGS(acomm, "MainDbAmawareLOGS.properties", args);
 		
 		return retb;
 	}
@@ -161,7 +174,12 @@ public class PTableCodes extends DataStoreReport {
 		super.doSourceEnded(acomm);
 
 		//dbtTABLE_CODES.doProcessEndQueryLines(acomm, this);
-		
+		//
+		uTABLE_CODES.doProcessEnd(acomm);
+		uTABLE_CODES_ULOGS.doProcessEnd(acomm);
+		aDnaULOGS.doProcessEnd(acomm);
+		aAmawareLOGS.doProcessEnd(acomm);
+		//
 		extractFileO.writeLine("___________________________________________________________________________________________________ ");
 		extractFileO.writeLine(" Report ENDED @"+dateFormat.format(new Date()) );
 		extractFileO.writeLine("___________________________________________________________________________________________________ ");
@@ -225,8 +243,11 @@ public class PTableCodes extends DataStoreReport {
 		if (!_exceptionSql.isExceptionNone()) {
 			throw _exceptionSql;
 		}
+		
+		super.doDataRow(acomm, _exceptionSql, _isRowBreak);
+		
 		//report on input file row		
-		uTABLE_CODES.doDataRowOut(acomm, this, _exceptionSql,  _isRowBreak);
+		//uTABLE_CODES.doDataRowOut(acomm, this, _exceptionSql,  _isRowBreak);
 		//
 		String outMsg="";
 		//
@@ -241,38 +262,166 @@ public class PTableCodes extends DataStoreReport {
 		}
 		//
 		
-    	uTABLE_CODES.doProcessResult(acomm
-			    , "" //String id
+		doDataRowAsInline(acomm);
+		
+		//doDataRowAsResult(acomm);
+		
+		//uTABLE_CODES.doDataRowOut(this, _exceptionSql,  _isRowBreak);
+		
+		//
+		return true; // or false to stop processing of file
+
+	}
+	
+	public boolean doDataRowAsInline(ACommDb acomm) {
+		//
+		this.reportLineOut(acomm, this.getClass().getName()
+			         + "=> doDataRowAsInline" 
+			         ,this.htmlLineOkStyle);   	 		
+        //		
+		DbProcessStatus outprocessStatus = DbProcessStatus.NotFound;
+		int rowCnt=0, rowLogCnt=0;
+		int rowMaxCnt=10;
+		//
+		//		
+		uTABLE_CODES.doProcessStart("" //String id
 			    , fTabName.getColumnValueTrim() //String tab_name
 			    , fCodeName.getColumnValueTrim() //String code_name
 			    , fCodeValue.getColumnValueTrim() //String code_value
 			    , fUserModId.getColumnValueTrim() //String user_mod_id
 			    , "" //String user_mod_ts
+			    );		
+    	while (uTABLE_CODES.doQueryRowData()) {
+    		++rowCnt;
+    		//dbtTABLE_CODES.reportRowOut(acomm, uTABLE_CODES, this, "col 1 style" , "col 1 header text");
+    		
+    		//uTABLE_CODES.doProcessRowFound(this);
+    	
+    		uTABLE_CODES.setAppReportGroupLevel(1);
+
+    		//uTABLE_CODES.setAppReportGroupLevel(uTABLE_CODES.getAppReportGroupLevel()+1);    		
+   	        if (uTABLE_CODES.getTabName().contentEquals("logs")) {
+   	        	
+   	           uTABLE_CODES.reportRowOutParent(this,"background-color:white;color:green;");	
+   	        	
+   	           uTABLE_CODES.setAppReportGroupLevel(uTABLE_CODES.getAppReportGroupLevel()+1);   	        	
+               //
+   	           aDnaULOGS.doProcessStart("" //id
+ 	                , "" // create_ts
+ 	                , uTABLE_CODES.getCodeValue() // "login"  // entry_type
+ 	                , "" // entry_subject
+ 	                , "" // entry_topic
+ 	                , "" // entry_msg
+ 	                , "" // user_name
+ 	                , "" // user_email
+ 	                , "" // user_ip
+   				    );	
+   	           
+   	           int utcRowCnt=0;
+   	    	   while (aDnaULOGS.doQueryRowData()) {
+   	    		   ++utcRowCnt;
+   	    		//dbtTABLE_CODES.reportRowOut(acomm, uTABLE_CODES, this, "col 1 style" , "col 1 header text");
+   	    		
+   	    		   if (utcRowCnt<21) {
+   	    		       aDnaULOGS.doProcessRowFound(this);
+   	    		   } else {
+   	    			   this.rptOutLine(aDnaULOGS.getAcomm(), this.getClass().getName()
+				          + " for{" + aDnaULOGS.getAcomm().getDbUrlDbAndSchemaName()+  "}"
+						  +"...Request to not continue. More Rows may exist"
+						  +" maxrows{"+20+"}"
+						  +" #rowsout{"+utcRowCnt+"}"
+						//+" #rsRows{"+ acomm.getDbResultSet().getFetchSize()
+						,this.htmlLineWarningStyle);   
+   	    			   
+   	    			   break;
+   	    		   }
+   	    		
+   	    	   }   	           
+   	    	   if (utcRowCnt==0) {
+   	    		  this.rptOutLine(aDnaULOGS.getAcomm(), this.getClass().getName()
+   				         + " for{" + aDnaULOGS.getAcomm().getDbUrlDbAndSchemaName() +  "}"
+   				         + "...Rows NOT Found for" 
+   				         + aDnaULOGS.getInWhereColValString(aDnaULOGS.getAcomm())
+   				         ,this.htmlLineErrorStyle);   	    		   
+   	    	   }
+    		   //
+   	    	   
+   	    	   
+    		   aAmawareLOGS.doProcessResult("" //id
+ 	                , "" // create_ts
+ 	                , uTABLE_CODES.getCodeValue() // "login"  // entry_type
+ 	                , "" // entry_subject
+ 	                , "" // entry_topic
+ 	                , "" // entry_msg
+ 	                , "" // user_name
+ 	                , "" // user_email
+ 	                , "" // user_ip
+ 				    
+ 				    , this
+ 				    , 25// 99999
+ 				    );     
+    		   
+    		   
+    		   
+    		   
+    		   
+    		   
+    		   
+    		
+   	        } else {
+   			   this.rptOutLine(uTABLE_CODES.getAcomm(), this.getClass().getName()
+   					   + " for{" + uTABLE_CODES.getAcomm().getDbUrlDbAndSchemaName() +  "}"
+   				       + "...Unknown table name{" 
+   					   + uTABLE_CODES.getTabName() +  "}"
+   					   ,this.htmlLineErrorStyle);
+   	      }		
+    	}
+		
+		
+
+		
+	    return true;
+	}
+	
+	public boolean doDataRowAsResult(ACommDb acomm) {
+		
+		
+		  this.reportLineOut(acomm, this.getClass().getName()
+			         + "=> doDataRowAsResult" 
+			         ,this.htmlLineOkStyle);   	 
+		
+		
+		//doProcessResult loops for each row and has callback to doProcessRowFound
+    	uTABLE_CODES_ULOGS.doProcessResult("" //String id
+			    , fTabName.getColumnValueTrim() //String tab_name
+			    , fCodeName.getColumnValueTrim() //String code_name
+			    , fCodeValue.getColumnValueTrim() //String code_value
+			    , fUserModId.getColumnValueTrim() //String user_mod_id
+			    , "" //String user_mod_ts
+			    ,""
+			    ,""
 			    
 			    , this
 			    , 99999
 			    
 			    );
 		
-    	dbProcessStatus=uTABLE_CODES.dbStatus;
+    	dbProcessStatus=uTABLE_CODES_ULOGS.dbStatus;
     	switch (dbProcessStatus) {
 		case OK: 
-		    uTABLE_CODES.outLogDbStatus(acomm, uTABLE_CODES.thisClassName, getSourceDataRowsRead());
+		    uTABLE_CODES_ULOGS.outLogDbStatus(uTABLE_CODES_ULOGS.thisClassName, getSourceDataRowsRead());
 			break;
 		case NotFound: 
-		    uTABLE_CODES.outLogDbStatus(acomm, uTABLE_CODES.thisClassName, getSourceDataRowsRead());
+		    uTABLE_CODES_ULOGS.outLogDbStatus(uTABLE_CODES_ULOGS.thisClassName, getSourceDataRowsRead());
 			break;
 		default:
-		    uTABLE_CODES.outLogDbStatus(acomm, uTABLE_CODES.thisClassName, getSourceDataRowsRead());
+		    uTABLE_CODES_ULOGS.outLogDbStatus(uTABLE_CODES_ULOGS.thisClassName, getSourceDataRowsRead());
 			break;
-		}
-		
-		
-		//
-		return true; // or false to stop processing of file
-
+		}		
+	    
+	       return true;
 	}
-
+	
 	/*
 	 * 
 	 */
@@ -336,7 +485,7 @@ public class PTableCodes extends DataStoreReport {
 		
 		
 	}
- /*		
+ /*	moved to UTABLE_CODES	
 	 public void doLogs(ACommDb acomm, TABLE_CODES _qClass) {
 		 
 	        String outMsg=thisClassName+"=>Processing{" + uLOGS.thisClassName + "}";

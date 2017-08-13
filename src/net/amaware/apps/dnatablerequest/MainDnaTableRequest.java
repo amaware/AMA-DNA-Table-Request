@@ -28,22 +28,24 @@ public class MainDnaTableRequest {
 		//
 		try {  
 			acomm = new ACommDb(propFileName, args);
+			//acomm.dbConGet(); //this is done in MainAppDataStore
 			
-		    String inFileName = inputArgsSql(acomm,args);
-		    
+			String inFileName=AComm.getArgFileFullName();
 		    
 		    //if (inFileName.toUpperCase().startsWith(tableNameToProcess)) {
 		    //if (inFileName.toLowerCase().contains("data_track_feed")) {
+			
 		    if (inFileName.toLowerCase().contains("table_codes")) {
 		    	
 		    	tableNameToProcess="table_codes";
 		    	
-		    	mainApp = new MainAppDataStore(acomm, new PTableCodes()
+		    	mainApp = new MainAppDataStore(acomm, new PTableCodes(acomm,args)
                         , args, acomm.getFileTextDelimTab()
 	                      //, int rowDataStartNum, int rowDataEndNum, int rowDataHeadNum)
 	                      , 2, 999999, 1
+                          // , 4, 999999, 3
 	                      );		    	
-		    	
+		    
 
 		    } else if (inFileName.toLowerCase().contains("data_track")) {
 			    	
@@ -67,9 +69,10 @@ public class MainDnaTableRequest {
 			
 			mainApp.doProcess(acomm, thisClassName, ".9em");
 			
-			mainApp.getHtmlServ().outPageLine(acomm, thisClassName+" completed ");
+			//mainApp.getHtmlServ().outPageLine(acomm, thisClassName+" completed ");
 			
-			
+		    //acomm.dbConClose(); //if NOT using MainAppDataStore
+
 			acomm.end();
 			
 		} catch (AException e1) {
@@ -78,41 +81,7 @@ public class MainDnaTableRequest {
 		
 	}
 	
-	   public static String inputArgsSql(ACommDb acomm, String[] args) {
-			String filename="";
-			/**/
-		    System.out.println("====Args Input Process==========");
-		    
-		    if (args.length == 0) {        
-		    	System.out.println("========None==========");
-		    	
-			    	   throw new AException(acomm
-				    		, "No input arguments...FileName to process is required. Must beging with tablename");
-		    	
-		    } else {
-		    	System.out.println("--Args Input---len=" + args.length);	    	
-		    	for (int i = 0; i < args.length; i++) {
-			    	System.out.println(i + ">" + args[i]);    			
-		    	}
-				if (args[0].length() == 0) {
-				    	throw new AException(acomm
-					    		, "===Arg FileName needed======");	    	
-				}
-				
-				filename=args[0];
 
-			}
-			acomm.addPageMsgsLineOut("_______________Input Args_________________");
-			for (int i=0; i < args.length;i++){
-		    	acomm.addPageMsgsLineOut("Arg#"+i+"=" + args[i]);
-			}
-			//
-			File f = new File(filename);
-			filename=f.getName();			
-			//
-			return filename;
-			
-		}
 
 //
 // END CLASS

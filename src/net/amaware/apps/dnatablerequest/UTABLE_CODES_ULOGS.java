@@ -9,7 +9,7 @@ import net.amaware.app.DataStoreReport;
 /**
 *  
 */
-public class UTABLE_CODES extends TABLE_CODES {
+public class UTABLE_CODES_ULOGS extends TABLE_CODES {
 //SqlApp
  private static final long serialVersionUID = 1L;
  final String thisClassName = this.getClass().getName();
@@ -24,7 +24,7 @@ public class UTABLE_CODES extends TABLE_CODES {
 */
  
 //
- public UTABLE_CODES(ACommDb iacomm, String ipropFileName, String[] iargs) {
+ public UTABLE_CODES_ULOGS(ACommDb iacomm, String ipropFileName, String[] iargs) {
 	  super(iacomm, ipropFileName, iargs);
 	  
 	  //setProcessRptMode(ProcessRptMode.End);// DEFAULT: end report block
@@ -53,9 +53,68 @@ public String getQueryStatementOrderBy() {
  
  @Override
 public boolean doProcessRowFound(DataStoreReport dsr) {
-       return super.doProcessRowFound(dsr);	 
+	 
+//	 if (getCodeValue().contentEquals("email")) {
+//		 dsr.rptOutLine(acomm, this.getClass().getName() 
+//				       + "...Report Row being bypassed for{" + getCodeValue() +  "}" ,dsr.htmlLineWarningStyle);
+//	 } else {
+		 
+		 acomm.addPageMsgsLineOut(thisClassName+ " Row Found for"+this.getInWhereColValString(acomm));		 
+		 
+		 appReportGroupLevel=1;
+		 
 
+	     
 
+	     
+	     if (getTabName().contentEquals("logs")) {
+	    	 
+		     //reportRowOut(dsr,"background-color:white;color:green;");
+			    reportRowOutParent(dsr,"background-color:white;color:green;");
+		     //*
+	    	 
+		 	    aDnaULOGS.doProcessResult("" //id
+	 	                , "" // create_ts
+	 	                , getCodeValue() // "login"  // entry_type
+	 	                , "" // entry_subject
+	 	                , "" // entry_topic
+	 	                , "" // entry_msg
+	 	                , "" // user_name
+	 	                , "" // user_email
+	 	                , "" // user_ip
+	 				    
+	 				    , dsr
+	 				    , 25// 99999
+	 				    );
+		 	   
+		 	   //reportRowOut(dsr,"color:orange;");
+		 	    
+		 	   aAmawareLOGS.doProcessResult("" //id
+	 	                , "" // create_ts
+	 	                , getCodeValue() // "login"  // entry_type
+	 	                , "" // entry_subject
+	 	                , "" // entry_topic
+	 	                , "" // entry_msg
+	 	                , "" // user_name
+	 	                , "" // user_email
+	 	                , "" // user_ip
+	 				    
+	 				    , dsr
+	 				    , 25// 99999
+	 				    );		 	    
+		 	    
+	     } else {
+			 dsr.rptOutLine(acomm, this.getClass().getName()
+					   + " for{" + acomm.getDbUrlDbAndSchemaName() +  "}"
+				       + "...Unknown table name{" 
+					   + getTabName() +  "}"
+					   ,dsr.htmlLineErrorStyle);
+	     }
+         //*/
+	     
+//	 }
+
+	 return true;
 	     
  }
  
