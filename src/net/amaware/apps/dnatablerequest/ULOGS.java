@@ -28,12 +28,51 @@ public class ULOGS extends LOGS {
 	  //setProcessRptMode(ProcessRptMode.Continue); // Continue report output to same block
 
  } 
+ 
+
+ /*
+ * Required IF SQL not supplied 
+ *       in doProcessResult, doProcessStartResult
+ *  
+ */
+ public String doQueryStatement(ACommDb acomm) {
+	 
+	 
+	 return doQueryStatement(acomm
+	   , "SELECT " 
+	   + "    id "
+	   + "    ,create_ts "
+	   + "    ,entry_type "
+	   + "    ,entry_subject "
+	   + "    ,entry_topic "
+	   + "    ,entry_msg "
+	   + "    ,user_name "
+	   + "    ,user_email "
+	   //+ "    ,user_ip "
+	   + " FROM logs "
+	//
+	 
+	   //+ " WHERE  entry_type = 'access'"
+       + " WHERE  entry_type = " +"'"+getEntryType()+"'" 
+	   
+	   + "   AND  create_ts > '2015-03-29 22:26:02.0'"
+	 
+	 //, getQueryStatementOrderBy()
+	 , "ORDER BY create_ts DESC "
+	 
+	 
+	  //Not valid for MySQL => + "  WITH UR  "
+	   + " ; "
+	    );
+	//
+	 } //End doQueryStatement
+ 
 /*
 * Override to change ORDER BY columns, generated using primary key columns...
 *
 */
- @Override
- public String getQueryStatementOrderBy() {
+/// @Override
+ public String getQueryStatementOrderByxxx() {
 //
    return " ORDER BY create_ts desc "
    ;

@@ -34,22 +34,7 @@ public class UTABLE_CODES extends TABLE_CODES {
 	  aAmawareLOGS= new ULOGS(iacomm, "MainDbAmawareLOGS.properties", iargs);
 	  
  } 
-/*
-* Override to change ORDER BY columns, generated using primary key columns...
-*
-*/
- @Override
-public String getQueryStatementOrderBy() {
-//
-   return " ORDER BY tab_name "
-   + "        , code_name "
-   + "        , code_value "
-   ;
-   
-   //return " ORDER BY id ";
-   
- } //End getQueryStatementOrderBy
-//
+
  
  @Override
 public boolean doProcessRowFound(DataStoreReport dsr) {

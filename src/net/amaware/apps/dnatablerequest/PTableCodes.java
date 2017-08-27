@@ -284,13 +284,22 @@ public class PTableCodes extends DataStoreReport {
 		int rowMaxCnt=10;
 		//
 		//		
-		uTABLE_CODES.doProcessStart("" //String id
-			    , fTabName.getColumnValueTrim() //String tab_name
-			    , fCodeName.getColumnValueTrim() //String code_name
-			    , fCodeValue.getColumnValueTrim() //String code_value
-			    , fUserModId.getColumnValueTrim() //String user_mod_id
-			    , "" //String user_mod_ts
-			    );		
+	    //uTABLE_CODES.setEntryType(uTABLE_CODES.getCodeValue());
+        //uTABLE_CODES.doProcessStartResult(uTABLE_CODES.doQueryStatement(uTABLE_CODES.getAcomm()));
+		uTABLE_CODES.doProcessStartResult("select"
+                + " id "
+                + ",tab_name "
+                + ",code_name "
+                + ",code_value "
+//                + ",user_mod_id "
+                + ",user_mod_ts "				
+				
+                + " FROM table_codes "
+				//+ " WHERE tab_name = " +"'"+ uTABLE_CODES.getCodeValue()+"'"
+				//+ " WHERE tab_name = 'logs' "
+
+                + " ORDER BY tab_name ASC ");   	          
+           
     	while (uTABLE_CODES.doQueryRowData()) {
     		++rowCnt;
     		//dbtTABLE_CODES.reportRowOut(acomm, uTABLE_CODES, this, "col 1 style" , "col 1 header text");
@@ -305,17 +314,17 @@ public class PTableCodes extends DataStoreReport {
    	           uTABLE_CODES.reportRowOutParent(this,"background-color:white;color:green;");	
    	        	
    	           uTABLE_CODES.setAppReportGroupLevel(uTABLE_CODES.getAppReportGroupLevel()+1);   	        	
-               //
-   	           aDnaULOGS.doProcessStart("" //id
- 	                , "" // create_ts
- 	                , uTABLE_CODES.getCodeValue() // "login"  // entry_type
- 	                , "" // entry_subject
- 	                , "" // entry_topic
- 	                , "" // entry_msg
- 	                , "" // user_name
- 	                , "" // user_email
- 	                , "" // user_ip
-   				    );	
+               /*
+                * 
+                */
+   	           //
+   	           //aDnaULOGS.setEntryType(uTABLE_CODES.getCodeValue());
+   	           //aDnaULOGS.doProcessStartResult(aDnaULOGS.doQueryStatement(aDnaULOGS.getAcomm()));
+   	           aDnaULOGS.doProcessStartResult("select * from logs "
+                       + " WHERE entry_type = " +"'"+ uTABLE_CODES.getCodeValue()+"'" 
+                       + "   AND create_ts >= '2015-09-09 10:00:43.0'"
+                       + " ORDER BY create_ts DESC ");   	           
+   	           
    	           
    	           int utcRowCnt=0;
    	    	   while (aDnaULOGS.doQueryRowData()) {
@@ -323,7 +332,10 @@ public class PTableCodes extends DataStoreReport {
    	    		//dbtTABLE_CODES.reportRowOut(acomm, uTABLE_CODES, this, "col 1 style" , "col 1 header text");
    	    		
    	    		   if (utcRowCnt<21) {
-   	    		       aDnaULOGS.doProcessRowFound(this);
+   	    		       //aDnaULOGS.doProcessRowFound(this);
+   	    		       
+   	    		       aDnaULOGS.reportRowOut(this,"");
+   	    		       
    	    		   } else {
    	    			   this.rptOutLine(aDnaULOGS.getAcomm(), this.getClass().getName()
 				          + " for{" + aDnaULOGS.getAcomm().getDbUrlDbAndSchemaName()+  "}"
@@ -347,21 +359,12 @@ public class PTableCodes extends DataStoreReport {
     		   //
    	    	   
    	    	   
-    		   aAmawareLOGS.doProcessResult("" //id
- 	                , "" // create_ts
- 	                , uTABLE_CODES.getCodeValue() // "login"  // entry_type
- 	                , "" // entry_subject
- 	                , "" // entry_topic
- 	                , "" // entry_msg
- 	                , "" // user_name
- 	                , "" // user_email
- 	                , "" // user_ip
- 				    
- 				    , this
- 				    , 25// 99999
- 				    );     
-    		   
-    		   
+ 			  aAmawareLOGS.doProcessResult("select * from logs "
+                      + " WHERE entry_type = " +"'"+ uTABLE_CODES.getCodeValue()+"'" 
+                      + "   AND (create_ts >= '2015-09-09 10:00:43.0'"
+                      + "        OR entry_subject LIKE " + "'%dnalady%')"
+                      + " ORDER BY create_ts DESC "
+                      ,this, 25);
     		   
     		   
     		   
@@ -371,11 +374,16 @@ public class PTableCodes extends DataStoreReport {
    	        } else {
    			   this.rptOutLine(uTABLE_CODES.getAcomm(), this.getClass().getName()
    					   + " for{" + uTABLE_CODES.getAcomm().getDbUrlDbAndSchemaName() +  "}"
-   				       + "...Unknown table name{" 
+   				       
+   					   
+   					   + uTABLE_CODES.getInWhereColValString(uTABLE_CODES.getAcomm())
+   					   
+   					   + "...Unknown table name{" 
    					   + uTABLE_CODES.getTabName() +  "}"
    					   ,this.htmlLineErrorStyle);
-   	      }		
-    	}
+   	      }
+   	        
+    	} //end while
 		
 		
 
@@ -391,21 +399,9 @@ public class PTableCodes extends DataStoreReport {
 			         ,this.htmlLineOkStyle);   	 
 		
 		
-		//doProcessResult loops for each row and has callback to doProcessRowFound
-    	uTABLE_CODES_ULOGS.doProcessResult("" //String id
-			    , fTabName.getColumnValueTrim() //String tab_name
-			    , fCodeName.getColumnValueTrim() //String code_name
-			    , fCodeValue.getColumnValueTrim() //String code_value
-			    , fUserModId.getColumnValueTrim() //String user_mod_id
-			    , "" //String user_mod_ts
-			    ,""
-			    ,""
-			    
-			    , this
-			    , 99999
-			    
-			    );
-		
+		uTABLE_CODES_ULOGS.doProcessResult(this, 99999);
+
+    	
     	dbProcessStatus=uTABLE_CODES_ULOGS.dbStatus;
     	switch (dbProcessStatus) {
 		case OK: 
@@ -485,45 +481,7 @@ public class PTableCodes extends DataStoreReport {
 		
 		
 	}
- /*	moved to UTABLE_CODES	
-	 public void doLogs(ACommDb acomm, TABLE_CODES _qClass) {
-		 
-	        String outMsg=thisClassName+"=>Processing{" + uLOGS.thisClassName + "}";
-			acomm.addPageMsgsLineOut(outMsg);
-			
-			//getThisHtmlServ().outPageLineWarning(acomm,outMsg);
-			rptOutHeadingLine(acomm, "LOGS Results with TABLE_CODES ");
-	 	    	
-	 	    uLOGS.doProcessResult(acomm
-	 	                , "" //id
-	 	                , "" // create_ts
-	 	                , "contact" // "login"  // entry_type
-	 	                , "" // entry_subject
-	 	                , "" // entry_topic
-	 	                , "" // entry_msg
-	 	                , "" // user_name
-	 	                , "" // user_email
-	 	                , "" // user_ip
-	 				    
-	 				    , this
-	 				    , 99999
-	 				    );
-	 			
-	 	    dbProcessStatus=uLOGS.dbStatus;
-	 	    switch (dbProcessStatus) {
-	 		  case OK: 
-	 				uLOGS.outLogDbStatus(acomm, uLOGS.thisClassName, getSourceDataRowsRead());
-	 				break;
-	 		  case NotFound: 
-	 				uLOGS.outLogDbStatus(acomm, uLOGS.thisClassName, getSourceDataRowsRead());
-	 				break;
-	 		  default:
-	 				uLOGS.outLogDbStatus(acomm, uLOGS.thisClassName, getSourceDataRowsRead());
-	 				break;
-	 		}
-		 
-	 }
-*/	
+ 
 	//
 	/**
  	 * Following is generated for table in table generated file....copyied here for use in application
