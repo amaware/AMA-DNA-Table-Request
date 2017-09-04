@@ -34,40 +34,29 @@ public class UTABLE_CODES extends TABLE_CODES {
 	  aAmawareLOGS= new ULOGS(iacomm, "MainDbAmawareLOGS.properties", iargs);
 	  
  } 
-
- 
- @Override
-public boolean doProcessRowFound(DataStoreReport dsr) {
-       return super.doProcessRowFound(dsr);	 
-
-
-	     
- }
- 
- @Override
-public void doProcessRowNotFound(DataStoreReport dsr) {
-	  dsr.rptOutLine(acomm, this.getClass().getName()
-			         + " for{" + acomm.getDbUrlDbAndSchemaName() +  "}"
-			         + "...Rows NOT Found for" 
-			         + this.getInWhereColValString(acomm)
-			         ,dsr.htmlLineErrorStyle);
- }
  
  /*
  * Overload to change order of output fields...or remove...or add new ones.
  */
-  @Override
+  //@Override
 public void reportRowOutCols(DataStoreReport _arpt) {
      //
-        //_arpt.addDataRowAppendLineRowCols("id", getId());
-        _arpt.addDataRowAppendLineRowCols("tab_name", getTabName());
-        _arpt.addDataRowAppendLineRowCols("code_name", getCodeName());
-        _arpt.addDataRowAppendLineRowCols("code_value", getCodeValue());
-        _arpt.addDataRowAppendLineRowCols("user_mod_id", getUserModId());
-        _arpt.addDataRowAppendLineRowCols("user_mod_ts", getUserModTs());
-        //
-        _arpt.addDataRowAppendLineRowCols("Selection", getInWhereColValString(acomm));
-        //
+    //reportRowOutColumn( _arpt, ID);
+    reportRowOutColumn( _arpt, TAB_NAME);
+    reportRowOutColumn( _arpt, CODE_NAME);
+    reportRowOutColumn( _arpt, CODE_VALUE);
+    reportRowOutColumn( _arpt, USER_MOD_ID);
+    reportRowOutColumn( _arpt, USER_MOD_TS);
+    //
+    reportRowOutColumn( _arpt, "Selection", getInWhereColValString(acomm));
+    //
+   // reportRowOutColumn( _arpt, "ColNames", getColNames('~'));
+   // reportRowOutColumn( _arpt, "ColValues", getColValues('~'));
+   // reportRowOutColumn( _arpt, "ColNameValues", getColNameValues('~'));
+   //
+    //reportRowOutColumn( _arpt, "MetaDataTableNames", getMetaDataTableNames());
+    reportRowOutColumn( _arpt, "getInsertStatement", getInsertStatement(acomm));
+   //
   } //End reportRowOutCols
  //
 

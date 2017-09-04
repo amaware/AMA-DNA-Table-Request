@@ -264,7 +264,7 @@ public class PTableCodes extends DataStoreReport {
 		
 		doDataRowAsInline(acomm);
 		
-		//doDataRowAsResult(acomm);
+		doDataRowAsResult(acomm);
 		
 		//uTABLE_CODES.doDataRowOut(this, _exceptionSql,  _isRowBreak);
 		
@@ -277,7 +277,7 @@ public class PTableCodes extends DataStoreReport {
 		//
 		this.reportLineOut(acomm, this.getClass().getName()
 			         + "=> doDataRowAsInline" 
-			         ,this.htmlLineOkStyle);   	 		
+			         ,this.htmlLineOkStyle+"font-size:2em;");   	 		
         //		
 		DbProcessStatus outprocessStatus = DbProcessStatus.NotFound;
 		int rowCnt=0, rowLogCnt=0;
@@ -295,7 +295,7 @@ public class PTableCodes extends DataStoreReport {
                 + ",user_mod_ts "				
 				
                 + " FROM table_codes "
-				//+ " WHERE tab_name = " +"'"+ uTABLE_CODES.getCodeValue()+"'"
+				+ " WHERE tab_name = " +"'"+ fTabName.getColumnValue()+"'"
 				//+ " WHERE tab_name = 'logs' "
 
                 + " ORDER BY tab_name ASC ");   	          
@@ -309,8 +309,8 @@ public class PTableCodes extends DataStoreReport {
     		uTABLE_CODES.setAppReportGroupLevel(1);
 
     		//uTABLE_CODES.setAppReportGroupLevel(uTABLE_CODES.getAppReportGroupLevel()+1);    		
-   	        if (uTABLE_CODES.getTabName().contentEquals("logs")) {
-   	        	
+   	        //if (uTABLE_CODES.getTabName().contentEquals("logs")) {
+    		 if (uTABLE_CODES.isDataColResultValueFound(TABLE_CODES.TAB_NAME,"logs")) {
    	           uTABLE_CODES.reportRowOutParent(this,"background-color:white;color:green;");	
    	        	
    	           uTABLE_CODES.setAppReportGroupLevel(uTABLE_CODES.getAppReportGroupLevel()+1);   	        	
@@ -321,7 +321,7 @@ public class PTableCodes extends DataStoreReport {
    	           //aDnaULOGS.setEntryType(uTABLE_CODES.getCodeValue());
    	           //aDnaULOGS.doProcessStartResult(aDnaULOGS.doQueryStatement(aDnaULOGS.getAcomm()));
    	           aDnaULOGS.doProcessStartResult("select * from logs "
-                       + " WHERE entry_type = " +"'"+ uTABLE_CODES.getCodeValue()+"'" 
+                       + " WHERE entry_type = " +"'"+ uTABLE_CODES.getDataColResultValue(TABLE_CODES.CODE_VALUE)+"'" 
                        + "   AND create_ts >= '2015-09-09 10:00:43.0'"
                        + " ORDER BY create_ts DESC ");   	           
    	           
@@ -360,7 +360,7 @@ public class PTableCodes extends DataStoreReport {
    	    	   
    	    	   
  			  aAmawareLOGS.doProcessResult("select * from logs "
-                      + " WHERE entry_type = " +"'"+ uTABLE_CODES.getCodeValue()+"'" 
+                      + " WHERE entry_type = " +"'"+ uTABLE_CODES.getDataColResultValue(TABLE_CODES.CODE_VALUE)+"'" 
                       + "   AND (create_ts >= '2015-09-09 10:00:43.0'"
                       + "        OR entry_subject LIKE " + "'%dnalady%')"
                       + " ORDER BY create_ts DESC "
@@ -379,7 +379,7 @@ public class PTableCodes extends DataStoreReport {
    					   + uTABLE_CODES.getInWhereColValString(uTABLE_CODES.getAcomm())
    					   
    					   + "...Unknown table name{" 
-   					   + uTABLE_CODES.getTabName() +  "}"
+   					   + uTABLE_CODES.getDataColResultValue(TABLE_CODES.TAB_NAME) +  "}"
    					   ,this.htmlLineErrorStyle);
    	      }
    	        
@@ -396,9 +396,9 @@ public class PTableCodes extends DataStoreReport {
 		
 		  this.reportLineOut(acomm, this.getClass().getName()
 			         + "=> doDataRowAsResult" 
-			         ,this.htmlLineOkStyle);   	 
+			         ,this.htmlLineOkStyle+"font-size:2em;");	 
 		
-		
+		uTABLE_CODES_ULOGS.sqlTabName=fTabName.getColumnValue();
 		uTABLE_CODES_ULOGS.doProcessResult(this, 99999);
 
     	
@@ -477,9 +477,6 @@ public class PTableCodes extends DataStoreReport {
  	    //
 		return true;
 		
-		
-		
-		
 	}
  
 	//
@@ -492,28 +489,28 @@ public class PTableCodes extends DataStoreReport {
 	 */		
 	//
 	 public void doDSRFieldsToTableTABLE_CODES(ACommDb acomm, TABLE_CODES _qClass) {
-			   //_qClass.setId(fId.getColumnValue());
-			   _qClass.setTabName(fTabName.getColumnValue());
-			   _qClass.setCodeName(fCodeName.getColumnValue());
-			   _qClass.setCodeValue(fCodeValue.getColumnValue());
-			   _qClass.setUserModId(fUserModId.getColumnValue());
-			   _qClass.setUserModTs(fUserModTs.getColumnValue());
+		       //_qClass.setDataColResultValue(TABLE_CODES.ID,fId.getColumnValue());
+		       _qClass.setDataColResultValue(TABLE_CODES.TAB_NAME,fTabName.getColumnValue());
+		       _qClass.setDataColResultValue(TABLE_CODES.CODE_NAME,fCodeName.getColumnValue());
+		       _qClass.setDataColResultValue(TABLE_CODES.CODE_VALUE,fCodeValue.getColumnValue());
+		       _qClass.setDataColResultValue(TABLE_CODES.USER_MOD_ID,fUserModId.getColumnValue());
+		       _qClass.setDataColResultValue(TABLE_CODES.USER_MOD_TS,fUserModTs.getColumnValue());
 			//
     } //End doDSRFieldsToTable TABLE_CODES _qClass
-			//
-
+	//
 	 
 	/**
  	 * Copy from table Class fields to input file fields - this is generated and copied here 
 	 */		
 	//
 	 public void doDSRFieldsFromTableTABLE_CODES(ACommDb acomm, TABLE_CODES _qClass) {
-			   // fId.setColumnValue(_qClass.getId());
-			    fTabName.setColumnValue(_qClass.getTabName());
-			    fCodeName.setColumnValue(_qClass.getCodeName());
-			    fCodeValue.setColumnValue(_qClass.getCodeValue());
-			    fUserModId.setColumnValue(_qClass.getUserModId());
-			    fUserModTs.setColumnValue(_qClass.getUserModTs());
+		        //fId.setColumnValue(_qClass.getDataColResultValue(TABLE_CODES.ID));
+			    fTabName.setColumnValue(_qClass.getDataColResultValue(TABLE_CODES.TAB_NAME));
+			    fCodeName.setColumnValue(_qClass.getDataColResultValue(TABLE_CODES.CODE_NAME));
+			    fCodeValue.setColumnValue(_qClass.getDataColResultValue(TABLE_CODES.CODE_VALUE));
+			    fUserModId.setColumnValue(_qClass.getDataColResultValue(TABLE_CODES.USER_MOD_ID));
+			    fUserModTs.setColumnValue(_qClass.getDataColResultValue(TABLE_CODES.USER_MOD_TS));
+
 			//
 	 } //End doDSRFieldsFromTable qTABLE_CODES
 	//

@@ -13,7 +13,8 @@ public class UTABLE_CODES_ULOGS extends TABLE_CODES {
 //SqlApp
  private static final long serialVersionUID = 1L;
  final String thisClassName = this.getClass().getName();
- 
+ //
+ public String sqlTabName="";
  //
  ULOGS aDnaULOGS= null;
  ULOGS aAmawareLOGS= null;
@@ -38,6 +39,38 @@ public class UTABLE_CODES_ULOGS extends TABLE_CODES {
 * Override to change ORDER BY columns, generated using primary key columns...
 *
 */
+ /*
+ * Required IF SQL not supplied 
+ *       in doProcessResult, doProcessStartResult
+ *  
+ */
+ public String doQueryStatement(ACommDb acomm) {
+	 
+	 
+	 return "Select "
+             + "tab_name "
+             + ",code_name "
+             + ",code_value "
+//             + ",user_mod_id "
+           //  + ",user_mod_ts "				
+				
+             + " FROM table_codes "
+				+ " WHERE tab_name = " +"'"+ sqlTabName+"'"
+				//+ " WHERE tab_name = 'logs' "
+	   
+	   + "   AND  user_mod_ts > '2015-03-29 22:26:02.0'"
+	 
+	 //, getQueryStatementOrderBy()
+	   + " ORDER BY tab_name ASC "
+	 
+	 
+	  //Not valid for MySQL => + "  WITH UR  "
+	  + " ; "
+	  
+	   ;
+	//
+	 } //End doQueryStatement
+  
 //
  
  @Override
@@ -56,17 +89,17 @@ public boolean doProcessRowFound(DataStoreReport dsr) {
 	     
 
 	     
-	     if (getTabName().contentEquals("logs")) {
+	     if (isDataColResultValueFound(TAB_NAME,"logs")) {
 	    	 
 		     reportRowOutParent(dsr,"background-color:white;color:green;");
 			 //   
-			 aDnaULOGS.setEntryType(getCodeValue());
+			 aDnaULOGS.setEntryType(getDataColResultValue(CODE_VALUE));
 			 aDnaULOGS.doProcessResult(dsr, 100);
              //			    
 			// aAmawareLOGS.setEntryType(getCodeValue());
  			//aAmawareLOGS.doProcessResult(dsr, 25);
 			  aAmawareLOGS.doProcessResult("select * from logs "
-				                          + " WHERE entry_type = " +"'"+getCodeValue()+"'" 
+				                          + " WHERE entry_type = " +"'"+getDataColResultValue(CODE_VALUE)+"'" 
 					                      + "   AND (create_ts >= '2015-09-09 10:00:43.0'"
 					                      + "        OR entry_subject LIKE " + "'%dnalady%')"
 					                      + " ORDER BY create_ts DESC "
@@ -78,7 +111,7 @@ public boolean doProcessRowFound(DataStoreReport dsr) {
 					   + "...Where{" 
 					   + this.getInWhereColValString(acomm) +  "}"
 				       + "...Unknown table name{" 
-					   + getTabName() +  "}"
+					   + getDataColResultValue(TAB_NAME) +  "}"
 					   ,dsr.htmlLineErrorStyle);
 	     }
          //*/
@@ -104,14 +137,14 @@ public void doProcessRowNotFound(DataStoreReport dsr) {
   @Override
 public void reportRowOutCols(DataStoreReport _arpt) {
      //
-        //_arpt.addDataRowAppendLineRowCols("id", getId());
-        _arpt.addDataRowAppendLineRowCols("tab_name", getTabName());
-        _arpt.addDataRowAppendLineRowCols("code_name", getCodeName());
-        _arpt.addDataRowAppendLineRowCols("code_value", getCodeValue());
-        _arpt.addDataRowAppendLineRowCols("user_mod_id", getUserModId());
-        _arpt.addDataRowAppendLineRowCols("user_mod_ts", getUserModTs());
+        reportRowOutColumn( _arpt, TAB_NAME);
+        reportRowOutColumn( _arpt, CODE_NAME);
+        reportRowOutColumn( _arpt, CODE_VALUE);
+        reportRowOutColumn( _arpt, USER_MOD_ID);
+        reportRowOutColumn( _arpt, USER_MOD_TS);
         //
-        _arpt.addDataRowAppendLineRowCols("Selection", getInWhereColValString(acomm));
+        reportRowOutColumn( _arpt, "Selection", getInWhereColValString(acomm));
+        //        
         //
   } //End reportRowOutCols
  //
