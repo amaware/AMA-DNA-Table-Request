@@ -14,8 +14,8 @@ public class UTABLE_CODES_ULOGS extends TABLE_CODES {
  private static final long serialVersionUID = 1L;
  final String thisClassName = this.getClass().getName();
  //
- public String sqlTabName="";
- //
+ public String SqlStmtWhere=""; 
+ // //
  ULOGS aDnaULOGS= null;
  ULOGS aAmawareLOGS= null;
  //
@@ -55,7 +55,7 @@ public class UTABLE_CODES_ULOGS extends TABLE_CODES {
            //  + ",user_mod_ts "				
 				
              + " FROM table_codes "
-				+ " WHERE tab_name = " +"'"+ sqlTabName+"'"
+			 +  SqlStmtWhere
 				//+ " WHERE tab_name = 'logs' "
 	   
 	   + "   AND  user_mod_ts > '2015-03-29 22:26:02.0'"

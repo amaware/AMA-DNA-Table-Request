@@ -3,6 +3,10 @@
 */
 package net.amaware.apps.dnatablerequest;
 import net.amaware.autil.ACommDb;
+import net.amaware.autil.AException;
+import net.amaware.autil.AExceptionSql;
+
+import java.sql.SQLException;
 
 import com.amaware.dna.query.LOGS;
 
@@ -14,6 +18,8 @@ public class ULOGS extends LOGS {
 //SqlApp
  private static final long serialVersionUID = 1L;
  final String thisClassName = this.getClass().getName();
+
+ String entryType=""; 
  
  int outnum=0;
  int outnumlimit=999999;
@@ -110,26 +116,44 @@ public void doProcessRowNotFound(DataStoreReport dsr) {
   @Override
   public void reportRowOutCols(DataStoreReport _arpt) {
 	    //
-	  
+      reportRowOutColumn( _arpt, id);
+      reportRowOutColumn( _arpt, create_ts);
+      reportRowOutColumn( _arpt, entry_type);
+      reportRowOutColumn( _arpt, entry_subject);
+      reportRowOutColumn( _arpt, entry_topic);
+      reportRowOutColumn( _arpt, entry_msg);
+      reportRowOutColumn( _arpt, user_name);
+      reportRowOutColumn( _arpt, user_email);
+      reportRowOutColumn( _arpt, user_ip);	          
 
-	          //_arpt.addDataRowAppendLineRowCols("id", getId());
-	          _arpt.addDataRowAppendLineRowCols("create_ts", getCreateTs());
-	          _arpt.addDataRowAppendLineRowCols("entry_type", getEntryType());
-	          _arpt.addDataRowAppendLineRowCols("entry_subject", getEntrySubject());
-	          _arpt.addDataRowAppendLineRowCols("entry_topic", getEntryTopic());
-	          _arpt.addDataRowAppendLineRowCols("entry_msg", getEntryMsg());
-	          _arpt.addDataRowAppendLineRowCols("user_name", getUserName());
-	          _arpt.addDataRowAppendLineRowCols("user_email", getUserEmail());
-	          _arpt.addDataRowAppendLineRowCols("user_ip", getUserIp());
-	
-	          _arpt.addDataRowAppendLineRowCols("Selection", getInWhereColValString(acomm));
+      reportRowOutColumn( _arpt, "Selection", getInWhereColValString(acomm));
+      
+	  try {
+	          //reportRowOutColumn( _arpt, "MetaDataTableNames", getMetaDataTableNames());
+	          //reportRowOutColumn( _arpt, "getInsertStatement", getInsertStatement(acomm));
+	          //
+                 reportRowOutColumn( _arpt, "getDeleteStatementPK", getDeleteStatementPK(acomm));
 	          
-
-	          
- 
-	//
+		} catch (AException e) {
+				reportRowOutColumn( _arpt, "getDeleteStatementPK", "AException{"+e.getMessage()+"}");
+					// TODO Auto-generated catch block
+					//throw new AExceptionSql(parentAcomm, e); 
+		}
+      
+      
+      //
 	 } //End reportRowOutCols
  //
+
+
+public String getEntryType() {
+	return entryType;
+}
+
+
+public void setEntryType(String entryType) {
+	this.entryType = entryType;
+}
 
  //
 //END

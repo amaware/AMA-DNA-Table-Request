@@ -74,6 +74,15 @@ public class MainDnaTableRequest {
 		    //acomm.dbConClose(); //if NOT using MainAppDataStore
 
 			acomm.end();
+
+		} catch (AExceptionSql e1) {
+			acomm.addPageMsgsLineOut("***AExceptionSql=>"
+					                +" Msg{"+e1.getExceptionMsg()+"}" 
+					                +" Code{"+e1.getExceptionCode()+"}"
+					                +" State{"+e1.getExceptionState()+"}"
+					                );
+			throw e1;
+					
 			
 		} catch (AException e1) {
 			throw e1;

@@ -90,6 +90,7 @@ public class PTableCodes extends DataStoreReport {
 	ACommDb acomm=null;
 	String[] args=null;
     //
+	String table_codesSqlStmtWhere="";
     //	
 	/**
 	 * 
@@ -260,8 +261,28 @@ public class PTableCodes extends DataStoreReport {
     				+ " |#MaxRows=" + getSourceDataRowEndNum()
 					);
 		}
-		//
-		
+        //
+		table_codesSqlStmtWhere="";
+		List<String> outWhereItemsList = new ArrayList<String>();
+		if(fTabName.isColValPopulated()) {
+			outWhereItemsList.add("tab_name = " +"'"+ fTabName.getColumnValue()+"'");
+		}
+		if(fCodeName.isColValPopulated()) {
+			outWhereItemsList.add("code_name = " +"'"+ fCodeName.getColumnValue()+"'");
+		}
+		if(fCodeValue.isColValPopulated()) {
+			outWhereItemsList.add("code_value = " +"'"+ fCodeValue.getColumnValue()+"'");
+		}
+		int instrCtr=0;
+		for (String instr: outWhereItemsList) {
+			++instrCtr;
+			if (instrCtr==1) {
+				table_codesSqlStmtWhere = " WHERE " + instr;
+			} else {
+				table_codesSqlStmtWhere += " AND " + instr;
+			}
+		}
+        //		
 		doDataRowAsInline(acomm);
 		
 		doDataRowAsResult(acomm);
@@ -271,6 +292,8 @@ public class PTableCodes extends DataStoreReport {
 		//
 		return true; // or false to stop processing of file
 
+		
+		
 	}
 	
 	public boolean doDataRowAsInline(ACommDb acomm) {
@@ -286,6 +309,8 @@ public class PTableCodes extends DataStoreReport {
 		//		
 	    //uTABLE_CODES.setEntryType(uTABLE_CODES.getCodeValue());
         //uTABLE_CODES.doProcessStartResult(uTABLE_CODES.doQueryStatement(uTABLE_CODES.getAcomm()));
+		
+		
 		uTABLE_CODES.doProcessStartResult("select"
                 + " id "
                 + ",tab_name "
@@ -295,8 +320,7 @@ public class PTableCodes extends DataStoreReport {
                 + ",user_mod_ts "				
 				
                 + " FROM table_codes "
-				+ " WHERE tab_name = " +"'"+ fTabName.getColumnValue()+"'"
-				//+ " WHERE tab_name = 'logs' "
+				+ table_codesSqlStmtWhere
 
                 + " ORDER BY tab_name ASC ");   	          
            
@@ -398,7 +422,7 @@ public class PTableCodes extends DataStoreReport {
 			         + "=> doDataRowAsResult" 
 			         ,this.htmlLineOkStyle+"font-size:2em;");	 
 		
-		uTABLE_CODES_ULOGS.sqlTabName=fTabName.getColumnValue();
+		uTABLE_CODES_ULOGS.SqlStmtWhere=table_codesSqlStmtWhere;
 		uTABLE_CODES_ULOGS.doProcessResult(this, 99999);
 
     	

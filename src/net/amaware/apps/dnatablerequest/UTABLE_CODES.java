@@ -56,6 +56,9 @@ public void reportRowOutCols(DataStoreReport _arpt) {
    //
     //reportRowOutColumn( _arpt, "MetaDataTableNames", getMetaDataTableNames());
     reportRowOutColumn( _arpt, "getInsertStatement", getInsertStatement(acomm));
+    //
+    //reportRowOutColumn( _arpt, "getDeleteStatementPK-this", getDeleteStatementPK(acomm));
+    //reportRowOutColumn( _arpt, "getDeleteStatementPK", getDeleteStatementPK(acomm,"logs"));
    //
   } //End reportRowOutCols
  //
