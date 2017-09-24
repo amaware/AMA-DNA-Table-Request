@@ -164,6 +164,8 @@ public class PTableCodes extends DataStoreReport {
 		//}
 		  
 		uTABLE_CODES= new UTABLE_CODES(acomm, "MainDbDnaTABLE_CODES.properties", args);
+		//uTABLE_CODES= new UTABLE_CODES(acomm, "MainDbAmawareTABLE_CODES.properties", args);
+		   
 		uTABLE_CODES_ULOGS= new UTABLE_CODES_ULOGS(acomm, "MainDbDnaTABLE_CODES.properties", args);
 		aDnaULOGS= new ULOGS(acomm, "MainDbDnaLOGS.properties", args);
 		aAmawareLOGS= new ULOGS(acomm, "MainDbAmawareLOGS.properties", args);

@@ -3,10 +3,12 @@
 */
 package net.amaware.apps.dnatablerequest;
 import net.amaware.autil.ACommDb;
+import net.amaware.autil.ADataColResult;
 import net.amaware.autil.AException;
 import net.amaware.autil.AExceptionSql;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 
 import com.amaware.dna.query.LOGS;
 
@@ -129,11 +131,16 @@ public void doProcessRowNotFound(DataStoreReport dsr) {
       reportRowOutColumn( _arpt, "Selection", getInWhereColValString(acomm));
       
 	  try {
-	          //reportRowOutColumn( _arpt, "MetaDataTableNames", getMetaDataTableNames());
-	          //reportRowOutColumn( _arpt, "getInsertStatement", getInsertStatement(acomm));
+          //
+	      reportRowOutColumn( _arpt, "getDeleteStatementPK", getDeleteStatementPK(acomm));
+          reportRowOutColumn( _arpt, "getDeleteUserSupplied"
+        		                   , getDeleteStatement(acomm,rsTableName 				
+        		                		   ,Arrays.asList(new ADataColResult(rsTableName,id,getQueryRowColNameValue(acomm, id),false)
+        	    						     // ,new ADataColResult(rsTableName,entry_type,"userentry_type",true)
+        	    						     // ,new ADataColResult(rsTableName,entry_subject,"userentry_subject",true)
+        	    						     // ,new ADataColResult(rsTableName,entry_topic,"userentry_topic",true)
+        	    						      )));
 	          //
-                 reportRowOutColumn( _arpt, "getDeleteStatementPK", getDeleteStatementPK(acomm));
-	          
 		} catch (AException e) {
 				reportRowOutColumn( _arpt, "getDeleteStatementPK", "AException{"+e.getMessage()+"}");
 					// TODO Auto-generated catch block

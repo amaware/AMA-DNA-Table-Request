@@ -3,6 +3,13 @@
 */
 package net.amaware.apps.dnatablerequest;
 import net.amaware.autil.ACommDb;
+import net.amaware.autil.ADataColResult;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map.Entry;
+
 import com.amaware.dna.query.TABLE_CODES;
 
 import net.amaware.app.DataStoreReport;
@@ -53,9 +60,53 @@ public void reportRowOutCols(DataStoreReport _arpt) {
    // reportRowOutColumn( _arpt, "ColNames", getColNames('~'));
    // reportRowOutColumn( _arpt, "ColValues", getColValues('~'));
    // reportRowOutColumn( _arpt, "ColNameValues", getColNameValues('~'));
+   reportRowOutColumn( _arpt, "MetaDataTableNames", getMetaDataTableNames());    
    //
-    //reportRowOutColumn( _arpt, "MetaDataTableNames", getMetaDataTableNames());
-    reportRowOutColumn( _arpt, "getInsertStatement", getInsertStatement(acomm));
+  
+	List<ADataColResult> outADataColResult = new ArrayList<ADataColResult>();
+	 
+	//using Resultset Columns
+	/*
+    for(Entry<String, ADataColResult> m:aADataColResultMap.entrySet()){  
+    	if (m.getValue().isColSql() && !m.getValue().isAutoIncrement()) {
+	    	outADataColResult.add(m.getValue());
+    	}
+    }
+    */
+	for(ADataColResult adcr: rsADataColResultList){	   
+    	if (adcr.isColSql() && !adcr.isAutoIncrement()) {
+	    	outADataColResult.add(adcr);
+    	}
+	}  	
+    reportRowOutColumn( _arpt, "getInsert", getInsertStatement(acomm,rsTableName,outADataColResult));
+    
+    
+    //Use autoincrement
+    outADataColResult.clear();
+    /*
+    for(Entry<String, ADataColResult> m:aADataColResultMap.entrySet()){  
+    	if (m.getValue().isColSql()) {
+	    	outADataColResult.add(m.getValue());
+    	}
+    }
+    */
+	for(ADataColResult adcr: rsADataColResultList){	   
+    	if (adcr.isColSql()) {
+	    	outADataColResult.add(adcr);
+    	}
+	}  	
+    reportRowOutColumn( _arpt, "getInsertWithAutoIncrement", getInsertStatement(acomm,rsTableName,outADataColResult));
+    //
+    //Use supplied columns for insert
+    reportRowOutColumn( _arpt, "getInsertUserSupplied"
+    		, getInsertStatement(acomm,rsTableName
+    				,Arrays.asList(new ADataColResult(rsTableName,ID,getQueryRowColNameValue(acomm, ID),false)
+    						      ,new ADataColResult(rsTableName,TAB_NAME,"userTAB_NAME",true)
+    						      ,new ADataColResult(rsTableName,CODE_NAME,"userCODE_NAME",true)
+    						      ,new ADataColResult(rsTableName,CODE_VALUE,"userCODE_VALUE",true)
+    						      )
+    				));    
+    
     //
     //reportRowOutColumn( _arpt, "getDeleteStatementPK-this", getDeleteStatementPK(acomm));
     //reportRowOutColumn( _arpt, "getDeleteStatementPK", getDeleteStatementPK(acomm,"logs"));
