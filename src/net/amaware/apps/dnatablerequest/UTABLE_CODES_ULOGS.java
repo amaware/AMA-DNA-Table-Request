@@ -14,6 +14,9 @@ public class UTABLE_CODES_ULOGS extends TABLE_CODES {
  private static final long serialVersionUID = 1L;
  final String thisClassName = this.getClass().getName();
  //
+ final static String propFileDbDnaLOGS       = "DbDnaLOGS.properties";
+ final static String propFileDbAmawareLOGS   = "DbAmawareLOGS.properties"; 
+ //
  public String SqlStmtWhere=""; 
  // //
  ULOGS aDnaULOGS= null;
@@ -31,8 +34,8 @@ public class UTABLE_CODES_ULOGS extends TABLE_CODES {
 	  //setProcessRptMode(ProcessRptMode.End);// DEFAULT: end report block
 	  //setProcessRptMode(ProcessRptMode.Continue); // Continue report output to same block
 
-	  aDnaULOGS= new ULOGS(iacomm, "MainDbDnaLOGS.properties", iargs);
-	  aAmawareLOGS= new ULOGS(iacomm, "MainDbAmawareLOGS.properties", iargs);
+	  aDnaULOGS= new ULOGS(iacomm, propFileDbDnaLOGS, iargs);
+	  aAmawareLOGS= new ULOGS(iacomm, propFileDbAmawareLOGS, iargs);
 	  
  } 
 /*
