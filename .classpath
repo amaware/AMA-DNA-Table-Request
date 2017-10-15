@@ -8,5 +8,8 @@
 	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/poi.jar"/>
 	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/jdom.jar"/>
 	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/mysql-connector-java.jar"/>
+	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/poi-ooxml.jar"/>
+	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/xmlbeans.jar"/>
+	<classpathentry kind="lib" path="C:/projects/amawareJavaDev/jar/poi-ooxml-schemas.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

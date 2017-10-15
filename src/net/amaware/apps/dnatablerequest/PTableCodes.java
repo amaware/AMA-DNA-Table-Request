@@ -472,11 +472,10 @@ public class PTableCodes extends DataStoreReport {
 			  + " |filename{" + outExcelFileName +"}"
 			 );		
         //	
-		
         thisADatabaseAccess = new ADatabaseAccess(acomm, propFileDbDnaTABLE_CODES);
         thisADatabaseAccess.doQueryRsExcel(aFileExcelPOI
                                               , "table_codes-DNA"
-                                              , "Select *"
+                                              , "Select tab_name, code_name, code_value, user_mod_id, user_mod_ts"
                                           +" from table_codes " 
                             //+ " Where field_nme  = '" + ufieldname +"'" 
                                           
@@ -485,6 +484,7 @@ public class PTableCodes extends DataStoreReport {
                             );     
 		
 		//
+        /**/
         thisADatabaseAccess = new ADatabaseAccess(acomm, propFileDbDnaLOGS);
         thisADatabaseAccess.doQueryRsExcel(aFileExcelPOI
                                               , "logs-DNA"
@@ -493,22 +493,22 @@ public class PTableCodes extends DataStoreReport {
                             //+ " Where field_nme  = '" + ufieldname +"'" 
                                           
                             + " order by entry_type, entry_subject, entry_topic"
-                            );     
+                            );    
+        //
         thisADatabaseAccess = new ADatabaseAccess(acomm, propFileDbDnaLOGS);
         thisADatabaseAccess.doQueryRsExcel(aFileExcelPOI
                                               , "logs-DNA-ByCreateTS"
-                                              , "Select *"
+                                              , "Select entry_type, entry_subject, entry_topic, create_ts, entry_msg,user_name, user_email, user_ip"
                                           +" from logs " 
                             //+ " Where field_nme  = '" + ufieldname +"'" 
                                           
                             + " order by create_ts desc, entry_type, entry_subject, entry_topic"
                             );             
-        //
         //		
         thisADatabaseAccess = new ADatabaseAccess(acomm, propFileDbAmawareTABLE_CODES);
         thisADatabaseAccess.doQueryRsExcel(aFileExcelPOI
                                               , "table_codes-Amaware"
-                                              , "Select *"
+                                              , "Select tab_name, code_name, code_value, user_mod_id, user_mod_ts"
                                           +" from table_codes " 
                             //+ " Where field_nme  = '" + ufieldname +"'" 
                                           
@@ -525,16 +525,18 @@ public class PTableCodes extends DataStoreReport {
                             //+ " Where field_nme  = '" + ufieldname +"'" 
                                           
                             + " order by entry_type, entry_subject, entry_topic"
-                            );     
+                            );   
+        //
         thisADatabaseAccess = new ADatabaseAccess(acomm, propFileDbAmawareLOGS);
         thisADatabaseAccess.doQueryRsExcel(aFileExcelPOI
                                               , "logs-Amaware-ByCreateTS"
-                                              , "Select *"
+                                              , "Select entry_type, entry_subject, entry_topic, create_ts,  entry_msg,user_name, user_email, user_ip"
                                           +" from logs " 
                             //+ " Where field_nme  = '" + ufieldname +"'" 
                                           
                             + " order by create_ts desc, entry_type, entry_subject, entry_topic"
                             );     
+        /**/
         //
    		try {
 			aFileExcelPOI.doOutputEnd();
